@@ -1,0 +1,184 @@
+{
+  "personal": {
+    "name": "Fatima Sayeed Amani",
+    "title": "Backend-focused Developer",
+    "subtitle": "AI + Automation Enthusiast",
+    "location": "Bengaluru, India",
+    "email": "fatima.amani@example.com",
+    "taglines": [
+      "Building Scalable Backends",
+      "Automating Workflows with AI",
+      "Creating Intelligent Solutions",
+      "Developing Microservices"
+    ],
+    "social": {
+      "github": "https://github.com/fatima-amani",
+      "linkedin": "https://linkedin.com/in/fatima-amani",
+      "email": "fatima.amani@example.com"
+    },
+    "resume": "/resume-fatima-amani.pdf"
+  },
+  "about": {
+    "intro": "Passionate backend developer with a strong foundation in computer science engineering and a keen interest in artificial intelligence and automation. I specialize in building scalable microservices, implementing AI-driven solutions, and creating efficient automation workflows. My experience spans across various technologies including Python, Java, and modern frameworks, with a particular focus on leveraging AI tools to solve complex business problems.",
+    "education": "Currently pursuing B.Tech in Computer Science Engineering with a focus on backend development and AI applications. I enjoy exploring the intersection of traditional software engineering and cutting-edge AI technologies."
+  },
+  "skills": {
+    "languages": ["Python", "Java", "JavaScript", "TypeScript", "SQL", "Bash"],
+    "frontend": ["React", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Material-UI"],
+    "backend": ["Node.js", "Express.js", "FastAPI", "Spring Boot", "RESTful APIs", "GraphQL"],
+    "databases": ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Firebase"],
+    "ai_tools": ["OpenAI GPT", "LangChain", "Hugging Face", "TensorFlow", "PyTorch", "MLOps"],
+    "devops_cloud": ["Docker", "Kubernetes", "AWS", "GCP", "CI/CD", "Git", "Linux"]
+  },
+  "experience": [
+    {
+      "title": "Backend Developer Intern",
+      "company": "TechCorp Solutions",
+      "duration": "Jun 2024 - Present",
+      "achievements": [
+        "Developed AI-powered presales automation system using Python and LangChain, reducing manual effort by 60%",
+        "Implemented real-time communication features using LiveKit SDK for video conferencing platform",
+        "Built scalable microservices architecture handling 10K+ concurrent users",
+        "Optimized database queries resulting in 40% faster response times",
+        "Created automated testing pipelines reducing deployment time by 50%"
+      ]
+    },
+    {
+      "title": "Software Development Intern",
+      "company": "InnovateTech Labs",
+      "duration": "Jan 2024 - May 2024",
+      "achievements": [
+        "Designed and developed RESTful APIs using Spring Boot and PostgreSQL",
+        "Implemented authentication and authorization systems with JWT tokens",
+        "Collaborated with cross-functional teams using Agile methodologies",
+        "Contributed to code reviews and maintained 95% code coverage",
+        "Mentored 2 junior developers on backend best practices"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Job Discovery Platform with Gen AI",
+      "tech_stack": ["Python", "LangChain", "OpenAI GPT", "FastAPI", "PostgreSQL", "React"],
+      "description": "Intelligent job matching platform that uses generative AI to analyze resumes and match candidates with relevant opportunities. Features include AI-powered resume analysis, personalized job recommendations, and automated application screening.",
+      "github": "https://github.com/fatima-amani/ai-job-platform",
+      "demo": "https://ai-jobs-demo.vercel.app",
+      "highlights": [
+        "Achieved 85% accuracy in job-candidate matching",
+        "Processed 1000+ resumes with automated screening",
+        "Reduced time-to-hire by 40% for partner companies"
+      ]
+    },
+    {
+      "title": "AI-Powered Presales Automation",
+      "tech_stack": ["Python", "LangChain", "FastAPI", "Redis", "Docker", "AWS"],
+      "description": "Automated presales system that generates personalized proposals, analyzes client requirements, and provides intelligent recommendations. Integrates with CRM systems and uses natural language processing for document analysis.",
+      "github": "https://github.com/fatima-amani/presales-automation",
+      "highlights": [
+        "Automated 70% of presales documentation process",
+        "Generated $500K+ in qualified leads",
+        "Improved response time from 48 hours to 2 hours"
+      ]
+    },
+    {
+      "title": "Metro Microservices Architecture",
+      "tech_stack": ["Java", "Spring Boot", "MongoDB", "Docker", "Kubernetes", "Apache Kafka"],
+      "description": "Scalable microservices platform for metro transportation system including route planning, real-time tracking, payment processing, and passenger analytics. Features event-driven architecture and high availability design.",
+      "github": "https://github.com/fatima-amani/metro-microservices",
+      "highlights": [
+        "Handles 50K+ daily transactions",
+        "99.9% uptime with auto-scaling capabilities",
+        "Real-time processing of location data"
+      ]
+    },
+    {
+      "title": "Intelligent Code Review Bot",
+      "tech_stack": ["Python", "GitHub API", "OpenAI GPT", "FastAPI", "PostgreSQL"],
+      "description": "AI-powered code review assistant that automatically analyzes pull requests, suggests improvements, and identifies potential bugs. Integrates with GitHub and provides detailed feedback on code quality and security.",
+      "github": "https://github.com/fatima-amani/code-review-bot",
+      "highlights": [
+        "Analyzed 500+ pull requests",
+        "Identified 200+ potential bugs before deployment",
+        "Improved code quality scores by 30%"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science Engineering",
+      "institution": "Karnataka Institute of Technology",
+      "cgpa": "8.5/10.0",
+      "year": "2022-2026",
+      "relevant_coursework": ["Data Structures & Algorithms", "Database Management", "Software Engineering", "Machine Learning", "Computer Networks"]
+    },
+    {
+      "degree": "Higher Secondary (12th)",
+      "institution": "Delhi Public School",
+      "percentage": "92%",
+      "year": "2022",
+      "stream": "Science (PCM + Computer Science)"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "KSCT Innovation Grant Recipient",
+      "description": "Awarded ₹50,000 grant for developing AI-powered educational tools",
+      "year": "2024"
+    },
+    {
+      "title": "CodeChef 4-Star Programmer",
+      "description": "Achieved 4-star rating with consistent performance in competitive programming",
+      "year": "2023"
+    },
+    {
+      "title": "HackIndia 2024 - 2nd Place",
+      "description": "Built an AI-powered healthcare chatbot for rural areas",
+      "year": "2024"
+    },
+    {
+      "title": "Smart India Hackathon Finalist",
+      "description": "Developed blockchain-based voting system for government transparency",
+      "year": "2023"
+    },
+    {
+      "title": "Google Code-in Certificate",
+      "description": "Contributed to open source projects and received recognition from Google",
+      "year": "2023"
+    }
+  ],
+  "leadership": [
+    {
+      "role": "Technical Lead",
+      "organization": "College Coding Club",
+      "duration": "2023-2024",
+      "responsibilities": [
+        "Led a team of 15 developers in building college management system",
+        "Organized 5+ technical workshops on backend development",
+        "Mentored 20+ junior students in competitive programming",
+        "Coordinated hackathons with 200+ participants"
+      ]
+    },
+    {
+      "role": "Vice President",
+      "organization": "AI & ML Society",
+      "duration": "2023-Present",
+      "responsibilities": [
+        "Organized technical talks by industry experts",
+        "Led research projects on machine learning applications",
+        "Coordinated study groups for AI certification courses",
+        "Built partnerships with tech companies for internship opportunities"
+      ]
+    },
+    {
+      "role": "Open Source Contributor",
+      "organization": "Various Projects",
+      "duration": "2022-Present",
+      "responsibilities": [
+        "Contributed to 10+ open source projects on GitHub",
+        "Fixed bugs and added features in Python and JavaScript projects",
+        "Maintained documentation for developer communities",
+        "Reviewed code and helped onboard new contributors"
+      ]
+    }
+  ]
+}
