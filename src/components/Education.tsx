@@ -1,4 +1,4 @@
-import { GraduationCap, Calendar, Award } from 'lucide-react';
+import { GraduationCap, Calendar, Award, MapPin } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -7,9 +7,10 @@ interface EducationProps {
     education: Array<{
       degree: string;
       institution: string;
+      board: string;
       cgpa?: string;
       percentage?: string;
-      year: string;
+      timeline: string;
       relevant_coursework?: string[];
       stream?: string;
     }>;
@@ -43,8 +44,16 @@ const Education = ({ data }: EducationProps) => {
                       <GraduationCap className="h-6 w-6 mr-3" />
                       {edu.degree}
                     </CardTitle>
-                    <div className="text-lg font-semibold text-foreground mb-2">
+                    <div className="flex items-center text-lg font-semibold text-foreground mb-1">
+                      <MapPin className="h-4 w-4 mr-2 text-muted-foreground" />
                       {edu.institution}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-2">
+                      {edu.board}
+                    </div>
+                    <div className="flex items-center text-sm text-muted-foreground mb-4">
+                      <Calendar className="h-4 w-4 mr-2" />
+                      {edu.timeline}
                     </div>
                     {edu.stream && (
                       <div className="text-muted-foreground mb-2">
@@ -53,10 +62,6 @@ const Education = ({ data }: EducationProps) => {
                     )}
                   </div>
                   <div className="flex flex-col items-end space-y-2">
-                    <Badge variant="outline" className="flex items-center gap-2 px-4 py-2">
-                      <Calendar className="h-4 w-4" />
-                      {edu.year}
-                    </Badge>
                     {(edu.cgpa || edu.percentage) && (
                       <Badge variant="secondary" className="flex items-center gap-2 px-4 py-2">
                         <Award className="h-4 w-4" />
@@ -68,41 +73,47 @@ const Education = ({ data }: EducationProps) => {
               </CardHeader>
               {edu.relevant_coursework && (
                 <CardContent>
-                  <div>
-                    <h4 className="text-sm font-semibold text-foreground mb-3">Relevant Coursework</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {edu.relevant_coursework.map((course, courseIndex) => (
-                        <Badge
-                          key={courseIndex}
-                          variant="secondary"
-                          className="tech-badge text-xs"
-                        >
-                          {course}
-                        </Badge>
-                      ))}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Marks</h4>
+                      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+                        {edu.cgpa && (
+                          <div className="text-lg font-bold text-primary">
+                            CGPA: {edu.cgpa}
+                          </div>
+                        )}
+                        {edu.percentage && (
+                          <div className="text-lg font-bold text-primary">
+                            Percentage: {edu.percentage}
+                          </div>
+                        )}
+                        {edu.stream && (
+                          <div className="text-sm text-muted-foreground mt-1">
+                            Stream: {edu.stream}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-2">Relevant Coursework</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {edu.relevant_coursework.map((course, courseIndex) => (
+                          <Badge
+                            key={courseIndex}
+                            variant="secondary"
+                            className="tech-badge text-xs"
+                          >
+                            {course}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
               )}
             </Card>
           ))}
-        </div>
-
-        {/* Additional learning */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-hero rounded-2xl p-8 card-elevated">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">Continuous Learning</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              Beyond formal education, I actively pursue online courses, certifications, and hands-on projects 
-              to stay current with emerging technologies and industry best practices.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Badge variant="secondary" className="px-4 py-2">AWS Certified</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Google Cloud Platform</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Machine Learning Coursera</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Docker & Kubernetes</Badge>
-            </div>
-          </div>
         </div>
       </div>
     </section>

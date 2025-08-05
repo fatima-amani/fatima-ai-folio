@@ -7,8 +7,11 @@ import Skills from '../components/Skills';
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Education from '../components/Education';
+import Certifications from '../components/Certifications';
 import Achievements from '../components/Achievements';
 import Leadership from '../components/Leadership';
+import Hobbies from '../components/Hobbies';
+import FunFact from '../components/FunFact';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -44,13 +47,16 @@ const Index = () => {
       <Navigation isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero data={portfolioData} />
+        <FunFact data={portfolioData} />
         <About data={portfolioData} />
         <Skills data={portfolioData} />
         <Experience data={portfolioData} />
         <Projects data={portfolioData} />
         <Education data={portfolioData} />
+        <Certifications data={portfolioData} />
         <Achievements data={portfolioData} />
         <Leadership data={portfolioData} />
+        <Hobbies data={portfolioData} />
         <Contact data={portfolioData} />
       </main>
       <Footer data={portfolioData} />

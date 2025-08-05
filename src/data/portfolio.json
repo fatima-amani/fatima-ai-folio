@@ -18,6 +18,17 @@
     },
     "resume": "/resume-fatima-amani.pdf"
   },
+  "funFacts": [
+    "I once debugged a critical production issue at 3 AM while on a weekend trip!",
+    "I've written over 50,000 lines of Python code in the past year",
+    "My first program was a calculator that could only add numbers",
+    "I can solve a Rubik's cube in under 2 minutes",
+    "I've contributed to 15+ open source projects on GitHub",
+    "I built my first AI chatbot when I was 17",
+    "I once automated my entire college assignment submission process",
+    "I have a collection of 200+ programming books (mostly digital)",
+    "I can type at 120 WPM without looking at the keyboard"
+  ],
   "about": {
     "intro": "Passionate backend developer with a strong foundation in computer science engineering and a keen interest in artificial intelligence and automation. I specialize in building scalable microservices, implementing AI-driven solutions, and creating efficient automation workflows. My experience spans across various technologies including Python, Java, and modern frameworks, with a particular focus on leveraging AI tools to solve complex business problems.",
     "education": "Currently pursuing B.Tech in Computer Science Engineering with a focus on backend development and AI applications. I enjoy exploring the intersection of traditional software engineering and cutting-edge AI technologies."
@@ -41,6 +52,15 @@
         "Built scalable microservices architecture handling 10K+ concurrent users",
         "Optimized database queries resulting in 40% faster response times",
         "Created automated testing pipelines reducing deployment time by 50%"
+      ],
+      "highlights": [
+        "Led the design of automated proposal generation system",
+        "Achieved 99.9% uptime for critical microservices",
+        "Reduced API response time from 2s to 0.8s"
+      ],
+      "images": [
+        "/experience/techcorp-award.jpg",
+        "/experience/microservices-architecture.png"
       ]
     },
     {
@@ -53,6 +73,14 @@
         "Collaborated with cross-functional teams using Agile methodologies",
         "Contributed to code reviews and maintained 95% code coverage",
         "Mentored 2 junior developers on backend best practices"
+      ],
+      "highlights": [
+        "Achieved 95% code coverage across all projects",
+        "Implemented zero-downtime deployment strategy",
+        "Mentored team to adopt best practices"
+      ],
+      "images": [
+        "/experience/innovate-completion.jpg"
       ]
     }
   ],
@@ -107,16 +135,44 @@
     {
       "degree": "B.Tech in Computer Science Engineering",
       "institution": "Karnataka Institute of Technology",
+      "board": "VTU (Visvesvaraya Technological University)",
       "cgpa": "8.5/10.0",
-      "year": "2022-2026",
-      "relevant_coursework": ["Data Structures & Algorithms", "Database Management", "Software Engineering", "Machine Learning", "Computer Networks"]
+      "timeline": "2022-2026",
+      "relevant_coursework": ["Data Structures & Algorithms", "Database Management", "Software Engineering", "Machine Learning", "Computer Networks", "Operating Systems", "Artificial Intelligence"]
     },
     {
       "degree": "Higher Secondary (12th)",
       "institution": "Delhi Public School",
+      "board": "CBSE",
       "percentage": "92%",
-      "year": "2022",
+      "timeline": "2020-2022",
       "stream": "Science (PCM + Computer Science)"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect - Associate",
+      "provider": "Amazon Web Services",
+      "skills": ["Cloud Architecture", "AWS Services", "Security", "Cost Optimization"],
+      "image": "/certificates/aws-solutions-architect.jpg"
+    },
+    {
+      "name": "Google Cloud Professional Developer",
+      "provider": "Google Cloud",
+      "skills": ["GCP Services", "Kubernetes", "DevOps", "Microservices"],
+      "image": "/certificates/gcp-developer.jpg"
+    },
+    {
+      "name": "MongoDB Certified Developer",
+      "provider": "MongoDB University",
+      "skills": ["NoSQL", "Database Design", "Aggregation", "Performance Tuning"],
+      "image": "/certificates/mongodb-developer.jpg"
+    },
+    {
+      "name": "Docker Certified Associate",
+      "provider": "Docker Inc.",
+      "skills": ["Containerization", "Docker Compose", "Container Security", "Orchestration"],
+      "image": "/certificates/docker-certified.jpg"
     }
   ],
   "achievements": [
@@ -156,6 +212,10 @@
         "Organized 5+ technical workshops on backend development",
         "Mentored 20+ junior students in competitive programming",
         "Coordinated hackathons with 200+ participants"
+      ],
+      "images": [
+        "/leadership/coding-club-team.jpg",
+        "/leadership/hackathon-event.jpg"
       ]
     },
     {
@@ -167,6 +227,9 @@
         "Led research projects on machine learning applications",
         "Coordinated study groups for AI certification courses",
         "Built partnerships with tech companies for internship opportunities"
+      ],
+      "images": [
+        "/leadership/ai-ml-society.jpg"
       ]
     },
     {
@@ -178,7 +241,40 @@
         "Fixed bugs and added features in Python and JavaScript projects",
         "Maintained documentation for developer communities",
         "Reviewed code and helped onboard new contributors"
-      ]
+      ],
+      "images": []
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "Competitive Programming",
+      "description": "4-star CodeChef programmer, loves solving algorithmic challenges",
+      "icon": "code"
+    },
+    {
+      "name": "Photography",
+      "description": "Capturing moments and exploring creative compositions",
+      "icon": "camera"
+    },
+    {
+      "name": "Chess",
+      "description": "Strategic thinking and tactical planning enthusiast",
+      "icon": "brain"
+    },
+    {
+      "name": "Tech Blogging",
+      "description": "Writing about backend development and AI innovations",
+      "icon": "pen-tool"
+    },
+    {
+      "name": "Open Source",
+      "description": "Contributing to projects and building developer communities",
+      "icon": "git-branch"
+    },
+    {
+      "name": "Music Production",
+      "description": "Creating electronic music as a creative outlet",
+      "icon": "music"
     }
   ]
 }

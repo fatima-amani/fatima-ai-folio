@@ -1,6 +1,8 @@
-import { Users, Calendar, ChevronRight } from 'lucide-react';
+import { Users, ChevronRight, Calendar, Eye } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 interface LeadershipProps {
   data: {
@@ -9,11 +11,22 @@ interface LeadershipProps {
       organization: string;
       duration: string;
       responsibilities: string[];
+      images: string[];
     }>;
   };
 }
 
 const Leadership = ({ data }: LeadershipProps) => {
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+
+  const toggleExpanded = (index: number) => {
+    setExpandedItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
     <section id="leadership" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,27 +77,40 @@ const Leadership = ({ data }: LeadershipProps) => {
                     </li>
                   ))}
                 </ul>
+
+                {/* View Images Button */}
+                {position.images.length > 0 && (
+                  <div className="border-t pt-4 mt-4">
+                    <Button
+                      variant="outline"
+                      onClick={() => toggleExpanded(index)}
+                      className="flex items-center gap-2"
+                    >
+                      <Eye className="h-4 w-4" />
+                      {expandedItems.includes(index) ? 'Hide Images' : 'View Images'}
+                    </Button>
+                    
+                    {expandedItems.includes(index) && (
+                      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+                        {position.images.map((image, imageIndex) => (
+                          <div key={imageIndex} className="rounded-lg overflow-hidden border">
+                            <img 
+                              src={image} 
+                              alt={`${position.organization} - Image ${imageIndex + 1}`}
+                              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                              onError={(e) => {
+                                e.currentTarget.src = `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop`;
+                              }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Leadership philosophy */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-hero rounded-2xl p-8 card-elevated">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">Leadership Philosophy</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              I believe in leading by example, fostering collaborative environments, and empowering others 
-              to reach their full potential. My approach focuses on mentorship, knowledge sharing, and 
-              building inclusive technical communities.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Badge variant="secondary" className="px-4 py-2">Mentorship</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Knowledge Sharing</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Team Building</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Community Growth</Badge>
-            </div>
-          </div>
         </div>
       </div>
     </section>

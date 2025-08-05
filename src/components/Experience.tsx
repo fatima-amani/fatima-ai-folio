@@ -1,6 +1,8 @@
-import { Calendar, MapPin, ChevronRight } from 'lucide-react';
+import { Calendar, MapPin, ChevronRight, Eye, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 interface ExperienceProps {
   data: {
@@ -9,11 +11,23 @@ interface ExperienceProps {
       company: string;
       duration: string;
       achievements: string[];
+      highlights: string[];
+      images: string[];
     }>;
   };
 }
 
 const Experience = ({ data }: ExperienceProps) => {
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+
+  const toggleExpanded = (index: number) => {
+    setExpandedItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
     <section id="experience" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,19 +65,72 @@ const Experience = ({ data }: ExperienceProps) => {
                 </div>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-3">
-                  {exp.achievements.map((achievement, achievementIndex) => (
-                    <li 
-                      key={achievementIndex} 
-                      className="flex items-start space-x-3 group"
+                {/* Highlights Section */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-primary">
+                    <Star className="h-5 w-5" />
+                    Key Highlights
+                  </h4>
+                  <div className="grid gap-2">
+                    {exp.highlights.map((highlight, highlightIndex) => (
+                      <div 
+                        key={highlightIndex}
+                        className="bg-primary/5 border border-primary/20 rounded-lg p-3"
+                      >
+                        <span className="text-foreground font-medium">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Achievements Section */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold mb-3 text-foreground">Achievements</h4>
+                  <ul className="space-y-3">
+                    {exp.achievements.map((achievement, achievementIndex) => (
+                      <li 
+                        key={achievementIndex} 
+                        className="flex items-start space-x-3 group"
+                      >
+                        <ChevronRight className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                        <span className="text-muted-foreground leading-relaxed">
+                          {achievement}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* View More Button */}
+                {exp.images.length > 0 && (
+                  <div className="border-t pt-4">
+                    <Button
+                      variant="outline"
+                      onClick={() => toggleExpanded(index)}
+                      className="flex items-center gap-2"
                     >
-                      <ChevronRight className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                      <span className="text-muted-foreground leading-relaxed">
-                        {achievement}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                      <Eye className="h-4 w-4" />
+                      {expandedItems.includes(index) ? 'Hide Images' : 'View More'}
+                    </Button>
+                    
+                    {expandedItems.includes(index) && (
+                      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+                        {exp.images.map((image, imageIndex) => (
+                          <div key={imageIndex} className="rounded-lg overflow-hidden border">
+                            <img 
+                              src={image} 
+                              alt={`${exp.company} - Image ${imageIndex + 1}`}
+                              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                              onError={(e) => {
+                                e.currentTarget.src = `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop`;
+                              }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
