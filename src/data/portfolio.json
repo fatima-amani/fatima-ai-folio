@@ -1,10 +1,10 @@
 {
   "personal": {
     "name": "Fatima Sayeed Amani",
-    "title": "Backend-focused Developer",
+    "title": "AIML Engineer",
     "subtitle": "AI + Automation Enthusiast",
     "location": "Bengaluru, India",
-    "email": "fatima.amani@example.com",
+    "email": "fatima.amani65@gmail.com",
     "taglines": [
       "Building Scalable Backends",
       "Automating Workflows with AI",
@@ -12,16 +12,15 @@
       "Developing Microservices"
     ],
     "social": {
-      "github": "https://github.com/fatima-amani",
+      "github": "https://github.com/fatimaamani",
       "linkedin": "https://linkedin.com/in/fatima-amani",
-      "email": "fatima.amani@example.com"
+      "email": "fatima.amani65@gmail.com"
     },
-    "resume": "/resume-fatima-amani.pdf"
+    "resume": "tinyurl.com/fatima-amani"
   },
   "funFacts": [
-    "I once debugged a critical production issue at 3 AM while on a weekend trip!",
-    "I've written over 50,000 lines of Python code in the past year",
     "My first program was a calculator that could only add numbers",
+    "I've written over 50,000 lines of Python code in the past year",
     "I can solve a Rubik's cube in under 2 minutes",
     "I've contributed to 15+ open source projects on GitHub",
     "I built my first AI chatbot when I was 17",
@@ -30,251 +29,266 @@
     "I can type at 120 WPM without looking at the keyboard"
   ],
   "about": {
-    "intro": "Passionate backend developer with a strong foundation in computer science engineering and a keen interest in artificial intelligence and automation. I specialize in building scalable microservices, implementing AI-driven solutions, and creating efficient automation workflows. My experience spans across various technologies including Python, Java, and modern frameworks, with a particular focus on leveraging AI tools to solve complex business problems.",
-    "education": "Currently pursuing B.Tech in Computer Science Engineering with a focus on backend development and AI applications. I enjoy exploring the intersection of traditional software engineering and cutting-edge AI technologies."
+    "intro": "Aspiring AIML engineer with a strong background in programming and web development. Motivated by problem-solving and dedicated to driving impactful solutions through innovation. Looking for opportunities to contribute to high-impact projects while expanding my skillset in a forward-thinking organization.",
+    "education": "Currently pursuing a Bachelor of Engineering in Artificial Intelligence and Machine Learning. I am passionate about the intersection of software engineering and cutting-edge AI technologies."
   },
   "skills": {
-    "languages": ["Python", "Java", "JavaScript", "TypeScript", "SQL", "Bash"],
-    "frontend": ["React", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Material-UI"],
-    "backend": ["Node.js", "Express.js", "FastAPI", "Spring Boot", "RESTful APIs", "GraphQL"],
-    "databases": ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Firebase"],
-    "ai_tools": ["OpenAI GPT", "LangChain", "Hugging Face", "TensorFlow", "PyTorch", "MLOps"],
-    "devops_cloud": ["Docker", "Kubernetes", "AWS", "GCP", "CI/CD", "Git", "Linux"]
+    "languages": ["Java", "C", "Python", "JavaScript", "GoLang", "SQL"],
+    "frontend": ["HTML", "CSS", "React", "Next JS"],
+    "backend": ["Node.js", "Express.js", "FastAPI", "Flask", "Spring Boot", "RESTful APIs", "GraphQL"],
+    "databases": ["PostgreSQL", "MongoDB", "MySQL"],
+    "ai_tools": ["LangChain", "LangGraph", "Livekit Agents", "Gen AI", "RAG", "TensorFlow", "PyTorch"],
+    "devops_cloud": ["Git", "GitHub", "Docker", "AWS", "GCP", "Selenium"]
   },
   "experience": [
     {
-      "title": "Backend Developer Intern",
-      "company": "TechCorp Solutions",
-      "duration": "Jun 2024 - Present",
+      "title": "Software Developer Intern",
+      "company": "Webknot Technologies",
+      "duration": "Jan 2025 - July 2025",
       "achievements": [
-        "Developed AI-powered presales automation system using Python and LangChain, reducing manual effort by 60%",
-        "Implemented real-time communication features using LiveKit SDK for video conferencing platform",
-        "Built scalable microservices architecture handling 10K+ concurrent users",
-        "Optimized database queries resulting in 40% faster response times",
-        "Created automated testing pipelines reducing deployment time by 50%"
+        "Worked on backend technologies and microservices using Spring Boot, FastAPI, and Express.",
+        "Designed and implemented automation solutions to streamline Business Analyst workflows, significantly reducing pre-sales task durations from weeks to minutes.",
+        "Developed cutting-edge AI-driven solutions leveraging large language models (LLMs) and AI Agents; engineered real-time interview platforms using LiveKit integrated with AI agents for dynamic, interactive experiences."
       ],
-      "highlights": [
-        "Led the design of automated proposal generation system",
-        "Achieved 99.9% uptime for critical microservices",
-        "Reduced API response time from 2s to 0.8s"
-      ],
-      "images": [
-        "/experience/techcorp-award.jpg",
-        "/experience/microservices-architecture.png"
-      ]
-    },
-    {
-      "title": "Software Development Intern",
-      "company": "InnovateTech Labs",
-      "duration": "Jan 2024 - May 2024",
-      "achievements": [
-        "Designed and developed RESTful APIs using Spring Boot and PostgreSQL",
-        "Implemented authentication and authorization systems with JWT tokens",
-        "Collaborated with cross-functional teams using Agile methodologies",
-        "Contributed to code reviews and maintained 95% code coverage",
-        "Mentored 2 junior developers on backend best practices"
-      ],
-      "highlights": [
-        "Achieved 95% code coverage across all projects",
-        "Implemented zero-downtime deployment strategy",
-        "Mentored team to adopt best practices"
-      ],
-      "images": [
-        "/experience/innovate-completion.jpg"
-      ]
+      "highlights": [],
+      "images": []
     }
   ],
   "projects": [
     {
-      "title": "Job Discovery Platform with Gen AI",
-      "tech_stack": ["Python", "LangChain", "OpenAI GPT", "FastAPI", "PostgreSQL", "React"],
-      "description": "Intelligent job matching platform that uses generative AI to analyze resumes and match candidates with relevant opportunities. Features include AI-powered resume analysis, personalized job recommendations, and automated application screening.",
-      "github": "https://github.com/fatima-amani/ai-job-platform",
-      "demo": "https://ai-jobs-demo.vercel.app",
+      "title": "Job Discovery Platform with Resume and Cover Letter Generation",
+      "tech_stack": ["Python", "Flask", "Selenium", "BeautifulSoup", "Gen AI"],
+      "description": "A website to scrape job listings from multiple platforms and generate automated resumes and cover letters using AI. The backend is built with Flask and includes secure authentication and a database for user data storage.",
+      "github": null,
+      "demo": null,
       "highlights": [
-        "Achieved 85% accuracy in job-candidate matching",
-        "Processed 1000+ resumes with automated screening",
-        "Reduced time-to-hire by 40% for partner companies"
+        "Built a website to scrape job listings from multiple websites like Intenshala, Naukri and Indeed",
+        "Developed backend with Flask and Flask-Login for smooth data flow and secure authentication.",
+        "Integrated a database for efficient user data storage",
+        "Added AI features for automated resume and cover letter generation."
       ]
     },
     {
       "title": "AI-Powered Presales Automation",
-      "tech_stack": ["Python", "LangChain", "FastAPI", "Redis", "Docker", "AWS"],
-      "description": "Automated presales system that generates personalized proposals, analyzes client requirements, and provides intelligent recommendations. Integrates with CRM systems and uses natural language processing for document analysis.",
-      "github": "https://github.com/fatima-amani/presales-automation",
+      "tech_stack": ["FastAPI", "Express.js", "MongoDB", "LangChain", "Selenium"],
+      "description": "A system of microservices built with Express.js and FastAPI to automate presales tasks. It leverages LLMs for requirement analysis and integrates with Galileo AI and Selenium for UI/UX wireframe generation.",
+      "github": null,
+      "demo": null,
       "highlights": [
-        "Automated 70% of presales documentation process",
-        "Generated $500K+ in qualified leads",
-        "Improved response time from 48 hours to 2 hours"
+        "Built microservices using Express.js and FastAPI to automate presales tasks like requirement analysis and effort estimation",
+        "Automated Manual Analysis tasks from a week to 5 minutes.",
+        "Integrated LLMs for PDF-based feature extraction, user persona generation, and technical recommendations."
       ]
     },
     {
-      "title": "Metro Microservices Architecture",
-      "tech_stack": ["Java", "Spring Boot", "MongoDB", "Docker", "Kubernetes", "Apache Kafka"],
-      "description": "Scalable microservices platform for metro transportation system including route planning, real-time tracking, payment processing, and passenger analytics. Features event-driven architecture and high availability design.",
-      "github": "https://github.com/fatima-amani/metro-microservices",
+      "title": "Metro Management Microservices",
+      "tech_stack": ["Java", "Spring Boot", "Kafka", "Redis", "Java Mailer"],
+      "description": "A distributed microservices backend for a metro management system, including user, metro, payment, and notification services. It uses Spring Boot, REST APIs, Kafka for event-driven communication, and Redis for performance optimization.",
+      "github": null,
+      "demo": null,
       "highlights": [
-        "Handles 50K+ daily transactions",
-        "99.9% uptime with auto-scaling capabilities",
-        "Real-time processing of location data"
+        "Developed a distributed microservices backend (User, Metro, Payment, Notification) using Spring Boot and REST APIs",
+        "Leveraged Kafka for event-driven communication",
+        "Optimized system performance through Redis caching",
+        "Integrated Java Mailer in Notification service for automated email alerts"
       ]
     },
     {
-      "title": "Intelligent Code Review Bot",
-      "tech_stack": ["Python", "GitHub API", "OpenAI GPT", "FastAPI", "PostgreSQL"],
-      "description": "AI-powered code review assistant that automatically analyzes pull requests, suggests improvements, and identifies potential bugs. Integrates with GitHub and provides detailed feedback on code quality and security.",
-      "github": "https://github.com/fatima-amani/code-review-bot",
+      "title": "BeautyBuddy: Makeup and Beauty Chatbot",
+      "tech_stack": ["Python", "FastAPI", "LangChain", "LangGraph", "RAG"],
+      "description": "An AI-powered chatbot with a FastAPI backend and Streamlit frontend. It uses LangGraph agents with LLMs and RAG models to classify and retrieve beauty information, and also includes a FAISS-based document retrieval system.",
+      "github": null,
+      "demo": null,
       "highlights": [
-        "Analyzed 500+ pull requests",
-        "Identified 200+ potential bugs before deployment",
-        "Improved code quality scores by 30%"
+        "Developed an AI-powered chatbot integrating FastAPI backend and Streamlit frontend",
+        "Utilized LangGraph agents with LLMs and RAG models to classify and retrieve relevant beauty information",
+        "Implemented web scraping techniques to dynamically suggest beauty products acting as tool to AI Agent",
+        "Engineered FAISS-based document retrieval system to enhance query accuracy using embedded knowledge bases"
+      ]
+    },
+    {
+      "title": "Serene Stays: Property Listing Website",
+      "tech_stack": ["Node.js", "Express", "HTML", "CSS", "MongoDB", "Passport", "Mapbox API"],
+      "description": "A comprehensive property listing website with a Node.js and Express backend. It uses MongoDB for data storage, Passport for user authentication, and the Mapbox API for interactive location services.",
+      "github": null,
+      "demo": null,
+      "highlights": [
+        "Developed a comprehensive property listing website for showcasing real estate listings",
+        "Created user authentication with Passport, and applied Mapbox API for interactive map-based location services"
+      ]
+    },
+    {
+      "title": "Bollywood Movie Recommendation System",
+      "tech_stack": ["Python", "Pandas", "CountVectorizer", "Streamlit"],
+      "description": "A movie recommendation system that provides personalized suggestions. It uses Python with Pandas for data manipulation, CountVectorizer for text feature extraction, and a Streamlit frontend for a user-friendly experience.",
+      "github": null,
+      "demo": null,
+      "highlights": [
+        "Developed a movie recommendation system for personalized movie suggestions based on user preferences.",
+        "Implemented CountVectorizer for text feature extraction, optimizing the model's recommendation accuracy.",
+        "Created a Streamlit-based frontend to ensure an intuitive user experience."
+      ]
+    },
+    {
+      "title": "GlamSphere: Online Makeup Store",
+      "tech_stack": ["Node.js", "Express", "HTML", "CSS", "MySQL", "Payment Gateway"],
+      "description": "An e-commerce platform for managing makeup products and transactions. It features a Node.js and Express backend, MySQL for secure database management, and a secure payment gateway integration.",
+      "github": null,
+      "demo": null,
+      "highlights": [
+        "Developed an e-commerce platform for managing makeup products and transactions",
+        "Integrated MySQL to ensure reliable and secure database management of product inventory",
+        "Developed a secure payment gateway using Razorpay, ensuring a safe transaction process for users"
+      ]
+    },
+    {
+      "title": "Chat Server using Web Socket",
+      "tech_stack": ["Node.js", "Express", "Socket.IO", "HTML", "CSS"],
+      "description": "A real-time chat server built with Node.js and Express. It uses WebSocket and Socket.IO to enable instant and scalable communication between users.",
+      "github": null,
+      "demo": null,
+      "highlights": [
+        "Developed a real-time chat server to enable instant communication between users",
+        "Utilized WebSocket and Socket.IO to create a scalable and responsive chat platform for interactive user experiences"
+      ]
+    },
+    {
+      "title": "Simon Says Game",
+      "tech_stack": ["HTML", "CSS", "JavaScript"],
+      "description": "An interactive Simon Says memory game with dynamic game logic and a visually appealing user interface built with HTML, CSS, and JavaScript.",
+      "github": null,
+      "demo": null,
+      "highlights": [
+        "Developed an interactive Simon Says memory game for user engagement.",
+        "Integrated JavaScript for dynamic game logic and enhanced user interaction."
+      ]
+    },
+    {
+      "title": "Online Makeup Guide",
+      "tech_stack": ["C"],
+      "description": "A makeup guide application developed in C that recommends products based on user inputs. It uses conditional statements and functions to provide personalized suggestions.",
+      "github": null,
+      "demo": null,
+      "highlights": [
+        "Developed a makeup guide application to recommend makeup products based on user inputs.",
+        "Applied conditional statements and functions to provide personalized product suggestions."
       ]
     }
   ],
   "education": [
     {
-      "degree": "B.Tech in Computer Science Engineering",
-      "institution": "Karnataka Institute of Technology",
-      "board": "VTU (Visvesvaraya Technological University)",
-      "cgpa": "8.5/10.0",
-      "timeline": "2022-2026",
-      "relevant_coursework": ["Data Structures & Algorithms", "Database Management", "Software Engineering", "Machine Learning", "Computer Networks", "Operating Systems", "Artificial Intelligence"]
+      "degree": "B.E. in Artificial Intelligence and Machine Learning",
+      "institution": "RNS Institute of Technology, Bengaluru",
+      "board": null,
+      "cgpa": "9.29/10.0",
+      "timeline": "2021-2025",
+      "relevant_coursework": []
     },
     {
       "degree": "Higher Secondary (12th)",
-      "institution": "Delhi Public School",
-      "board": "CBSE",
-      "percentage": "92%",
-      "timeline": "2020-2022",
-      "stream": "Science (PCM + Computer Science)"
+      "institution": "Dayananda Sagar PU College, Bengaluru",
+      "board": null,
+      "percentage": "99.6%",
+      "timeline": "2021",
+      "stream": "Science"
+    },
+    {
+      "degree": "Secondary (10th)",
+      "institution": "Jankidevi Public School, Mumbai",
+      "board": "ICSE",
+      "percentage": "95.2%",
+      "timeline": "2019",
+      "stream": null
     }
   ],
   "certifications": [
     {
-      "name": "AWS Certified Solutions Architect - Associate",
-      "provider": "Amazon Web Services",
-      "skills": ["Cloud Architecture", "AWS Services", "Security", "Cost Optimization"],
-      "image": "/certificates/aws-solutions-architect.jpg"
+      "name": "Supervised Machine Learning: Regression and Classification",
+      "provider": "Stanford Online",
+      "skills": ["Machine Learning", "Regression", "Classification"],
+      "image": null
     },
     {
-      "name": "Google Cloud Professional Developer",
+      "name": "Introduction to Generative AI",
       "provider": "Google Cloud",
-      "skills": ["GCP Services", "Kubernetes", "DevOps", "Microservices"],
-      "image": "/certificates/gcp-developer.jpg"
+      "skills": ["Generative AI", "AI Concepts"],
+      "image": null
     },
     {
-      "name": "MongoDB Certified Developer",
-      "provider": "MongoDB University",
-      "skills": ["NoSQL", "Database Design", "Aggregation", "Performance Tuning"],
-      "image": "/certificates/mongodb-developer.jpg"
+      "name": "Basic Linux with Administration",
+      "provider": "IIT Kanpur",
+      "skills": ["Linux", "System Administration"],
+      "image": null
     },
     {
-      "name": "Docker Certified Associate",
-      "provider": "Docker Inc.",
-      "skills": ["Containerization", "Docker Compose", "Container Security", "Orchestration"],
-      "image": "/certificates/docker-certified.jpg"
+      "name": "Data Structures and Algorithms Using Java",
+      "provider": "Infosys Springboard",
+      "skills": ["Data Structures", "Algorithms", "Java"],
+      "image": null
+    },
+    {
+      "name": "Python Fundamentals",
+      "provider": "Infosys Springboard",
+      "skills": ["Python", "Programming Fundamentals"],
+      "image": null
     }
   ],
   "achievements": [
     {
       "title": "KSCT Innovation Grant Recipient",
-      "description": "Awarded ₹50,000 grant for developing AI-powered educational tools",
-      "year": "2024"
-    },
-    {
-      "title": "CodeChef 4-Star Programmer",
-      "description": "Achieved 4-star rating with consistent performance in competitive programming",
-      "year": "2023"
-    },
-    {
-      "title": "HackIndia 2024 - 2nd Place",
-      "description": "Built an AI-powered healthcare chatbot for rural areas",
-      "year": "2024"
-    },
-    {
-      "title": "Smart India Hackathon Finalist",
-      "description": "Developed blockchain-based voting system for government transparency",
-      "year": "2023"
-    },
-    {
-      "title": "Google Code-in Certificate",
-      "description": "Contributed to open source projects and received recognition from Google",
-      "year": "2023"
+      "description": "The project 'Job Discovery Platform with Resume and Cover Letter Generation Using Generative AI' has been selected and funded by the Karnataka State Council for Science and Technology (KSCST) under the 48th series of the Student Project Programme (SPP) 2024-25.",
+      "year": "2024-25"
     }
   ],
   "leadership": [
     {
-      "role": "Technical Lead",
-      "organization": "College Coding Club",
-      "duration": "2023-2024",
+      "role": "Core Team Member",
+      "organization": "Competitive Coding Club",
+      "duration": null,
       "responsibilities": [
-        "Led a team of 15 developers in building college management system",
-        "Organized 5+ technical workshops on backend development",
-        "Mentored 20+ junior students in competitive programming",
-        "Coordinated hackathons with 200+ participants"
+        "Organized and led multiple competitive coding hackathons and workshops"
       ],
-      "images": [
-        "/leadership/coding-club-team.jpg",
-        "/leadership/hackathon-event.jpg"
-      ]
+      "images": []
     },
     {
-      "role": "Vice President",
-      "organization": "AI & ML Society",
-      "duration": "2023-Present",
+      "role": "Events Team Member",
+      "organization": "Cultural Activity Team",
+      "duration": null,
       "responsibilities": [
-        "Organized technical talks by industry experts",
-        "Led research projects on machine learning applications",
-        "Coordinated study groups for AI certification courses",
-        "Built partnerships with tech companies for internship opportunities"
+        "Organized and managed events and competitions at inter-college fest, ensuring smooth execution of events"
       ],
-      "images": [
-        "/leadership/ai-ml-society.jpg"
-      ]
+      "images": []
     },
     {
-      "role": "Open Source Contributor",
-      "organization": "Various Projects",
-      "duration": "2022-Present",
+      "role": "Head of Marketing Team",
+      "organization": "Artistry",
+      "duration": null,
       "responsibilities": [
-        "Contributed to 10+ open source projects on GitHub",
-        "Fixed bugs and added features in Python and JavaScript projects",
-        "Maintained documentation for developer communities",
-        "Reviewed code and helped onboard new contributors"
+        "Planned and strategized marketing efforts for department fests to boost engagement and participation"
       ],
       "images": []
     }
   ],
   "hobbies": [
     {
-      "name": "Competitive Programming",
-      "description": "4-star CodeChef programmer, loves solving algorithmic challenges",
-      "icon": "code"
+      "name": "Content Creation",
+      "description": "Creating content related to my interests.",
+      "icon": "video"
     },
     {
-      "name": "Photography",
-      "description": "Capturing moments and exploring creative compositions",
+      "name": "Vlogging",
+      "description": "Documenting experiences and sharing them online.",
       "icon": "camera"
     },
     {
-      "name": "Chess",
-      "description": "Strategic thinking and tactical planning enthusiast",
-      "icon": "brain"
+      "name": "Cooking",
+      "description": "Exploring new recipes and culinary techniques.",
+      "icon": "chef-hat"
     },
     {
-      "name": "Tech Blogging",
-      "description": "Writing about backend development and AI innovations",
-      "icon": "pen-tool"
-    },
-    {
-      "name": "Open Source",
-      "description": "Contributing to projects and building developer communities",
-      "icon": "git-branch"
-    },
-    {
-      "name": "Music Production",
-      "description": "Creating electronic music as a creative outlet",
-      "icon": "music"
+      "name": "Teaching",
+      "description": "Helping others learn and grow.",
+      "icon": "chalkboard"
     }
   ]
 }
