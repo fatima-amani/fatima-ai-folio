@@ -7,8 +7,8 @@ interface SkillsProps {
   data: {
     skills: {
       languages: string[];
-      frontend: string[];
-      backend: string[];
+      frontend_technologies: string[];
+      backend_technologies: string[];
       databases: string[];
       ai_tools: string[];
       devops_cloud: string[];
@@ -31,7 +31,7 @@ const Skills = ({ data }: SkillsProps) => {
     {
       title: "Frontend",
       icon: Palette,
-      skills: data.skills.frontend,
+      skills: data.skills.frontend_technologies,
       color: "text-tech-cyan",
       bgColor: "bg-tech-cyan/10",
       borderColor: "border-tech-cyan/20"
@@ -39,7 +39,7 @@ const Skills = ({ data }: SkillsProps) => {
     {
       title: "Backend",
       icon: Server,
-      skills: data.skills.backend,
+      skills: data.skills.backend_technologies,
       color: "text-tech-green",
       bgColor: "bg-tech-green/10",
       borderColor: "border-tech-green/20"

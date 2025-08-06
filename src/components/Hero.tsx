@@ -6,6 +6,7 @@ interface HeroProps {
   data: {
     personal: {
       name: string;
+      firstname: string;
       title: string;
       subtitle: string;
       location: string;
@@ -61,7 +62,7 @@ const Hero = ({ data }: HeroProps) => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative hero-glow">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative hero-glow pt-20 sm:pt-24 md:pt-28 lg:pt-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Floating animation elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -74,7 +75,7 @@ const Hero = ({ data }: HeroProps) => {
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
             Hi, I'm{' '}
-            <span className="gradient-text">{data.personal.name}</span>
+            <span className="gradient-text">{data.personal.firstname}</span>
           </h1>
 
           {/* Subtitle */}

@@ -1,6 +1,7 @@
 {
   "personal": {
     "name": "Fatima Sayeed Amani",
+    "firstname": "Fatima",
     "title": "AIML Engineer",
     "subtitle": "AI + Automation Enthusiast",
     "location": "Bengaluru, India",
@@ -16,7 +17,7 @@
       "linkedin": "https://linkedin.com/in/fatima-amani",
       "email": "fatima.amani65@gmail.com"
     },
-    "resume": "tinyurl.com/fatima-amani"
+    "resume": "https://tinyurl.com/fatima-amani"
   },
   "funFacts": [
     "My first program was a calculator that could only add numbers",
@@ -33,12 +34,12 @@
     "education": "Currently pursuing a Bachelor of Engineering in Artificial Intelligence and Machine Learning. I am passionate about the intersection of software engineering and cutting-edge AI technologies."
   },
   "skills": {
-    "languages": ["Java", "C", "Python", "JavaScript", "GoLang", "SQL"],
-    "frontend": ["HTML", "CSS", "React", "Next JS"],
-    "backend": ["Node.js", "Express.js", "FastAPI", "Flask", "Spring Boot", "RESTful APIs", "GraphQL"],
+    "languages": ["Java", "Python", "JavaScript", "GoLang", "C"],
+    "frontend_technologies": ["HTML", "CSS", "React", "Next JS"],
+    "backend_technologies": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Gin"],
     "databases": ["PostgreSQL", "MongoDB", "MySQL"],
-    "ai_tools": ["LangChain", "LangGraph", "Livekit Agents", "Gen AI", "RAG", "TensorFlow", "PyTorch"],
-    "devops_cloud": ["Git", "GitHub", "Docker", "AWS", "GCP", "Selenium"]
+    "ai_tools": ["LangChain", "LangGraph", "Livekit & Livekit Agents", "RAG models"],
+    "devops_cloud": ["Git", "GitHub", "Docker", "AWS", "GCP", "Selenium", "Linux"]
   },
   "experience": [
     {
