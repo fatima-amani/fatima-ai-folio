@@ -1,7 +1,8 @@
-import { Calendar, MapPin, ChevronRight, Eye, Star } from 'lucide-react';
+import { Calendar, MapPin, ChevronRight, Eye, Star, X } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useState } from 'react';
 
 interface ExperienceProps {
@@ -12,13 +13,23 @@ interface ExperienceProps {
       duration: string;
       achievements: string[];
       highlights: string[];
-      images: string[];
+      images: Array<{
+        name: string;
+        path: string;
+        description?: string;
+      }>;
     }>;
   };
 }
 
 const Experience = ({ data }: ExperienceProps) => {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  const [selectedImage, setSelectedImage] = useState<{
+    name: string;
+    path: string;
+    description?: string;
+  } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleExpanded = (index: number) => {
     setExpandedItems(prev => 
@@ -26,6 +37,16 @@ const Experience = ({ data }: ExperienceProps) => {
         ? prev.filter(i => i !== index)
         : [...prev, index]
     );
+  };
+
+  const openImageModal = (image: { name: string; path: string; description?: string }) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
   };
 
   return (
@@ -65,36 +86,36 @@ const Experience = ({ data }: ExperienceProps) => {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Highlights Section */}
+                {/* Achievements Section */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-primary">
                     <Star className="h-5 w-5" />
-                    Key Highlights
+                    Key Achievements
                   </h4>
                   <div className="grid gap-2">
-                    {exp.highlights.map((highlight, highlightIndex) => (
+                    {exp.achievements.map((achievement, achievementIndex) => (
                       <div 
-                        key={highlightIndex}
+                        key={achievementIndex}
                         className="bg-primary/5 border border-primary/20 rounded-lg p-3"
                       >
-                        <span className="text-foreground font-medium">{highlight}</span>
+                        <span className="text-foreground font-medium">{achievement}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Achievements Section */}
+                {/* Highlights Section */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-foreground">Achievements</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-foreground">Highlights</h4>
                   <ul className="space-y-3">
-                    {exp.achievements.map((achievement, achievementIndex) => (
+                    {exp.highlights.map((highlight, highlightIndex) => (
                       <li 
-                        key={achievementIndex} 
+                        key={highlightIndex} 
                         className="flex items-start space-x-3 group"
                       >
                         <ChevronRight className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
                         <span className="text-muted-foreground leading-relaxed">
-                          {achievement}
+                          {highlight}
                         </span>
                       </li>
                     ))}
@@ -110,21 +131,24 @@ const Experience = ({ data }: ExperienceProps) => {
                       className="flex items-center gap-2"
                     >
                       <Eye className="h-4 w-4" />
-                      {expandedItems.includes(index) ? 'Hide Images' : 'View More'}
+                      {expandedItems.includes(index) ? 'Hide Images' : 'View Images'}
                     </Button>
                     
                     {expandedItems.includes(index) && (
-                      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-in">
+                      <div className="mt-4 space-y-3 animate-fade-in">
                         {exp.images.map((image, imageIndex) => (
-                          <div key={imageIndex} className="rounded-lg overflow-hidden border">
-                            <img 
-                              src={image} 
-                              alt={`${exp.company} - Image ${imageIndex + 1}`}
-                              className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                              onError={(e) => {
-                                e.currentTarget.src = `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop`;
-                              }}
-                            />
+                          <div 
+                            key={imageIndex} 
+                            className="flex items-center justify-between p-3 bg-muted/50 rounded-lg hover:bg-muted/70 transition-colors cursor-pointer"
+                            onClick={() => openImageModal(image)}
+                          >
+                            <div className="flex items-center space-x-3">
+                              <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <Eye className="h-4 w-4 text-primary" />
+                              </div>
+                              <span className="font-medium text-foreground">{image.name}</span>
+                            </div>
+                            <ChevronRight className="h-4 w-4 text-muted-foreground" />
                           </div>
                         ))}
                       </div>
@@ -136,19 +160,50 @@ const Experience = ({ data }: ExperienceProps) => {
           ))}
         </div>
 
-        {/* Current status */}
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-hero rounded-2xl p-8 card-elevated">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">Currently Open To</h3>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Badge variant="secondary" className="px-4 py-2">Full-time Opportunities</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Backend Development Roles</Badge>
-              <Badge variant="secondary" className="px-4 py-2">AI/ML Projects</Badge>
-              <Badge variant="secondary" className="px-4 py-2">Remote Collaborations</Badge>
-            </div>
-          </div>
-        </div>
+
       </div>
+
+      {/* Image Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="flex items-center justify-between">
+              <span>{selectedImage?.name}</span>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={closeImageModal}
+                className="h-8 w-8 p-0"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            {selectedImage && (
+              <>
+                <div className="relative">
+                  <img 
+                    src={selectedImage.path} 
+                    alt={selectedImage.name}
+                    className="w-full h-auto max-h-[70vh] object-contain rounded-lg border"
+                    onError={(e) => {
+                      e.currentTarget.src = `https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop`;
+                    }}
+                  />
+                </div>
+                {selectedImage.description && (
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {selectedImage.description}
+                    </p>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

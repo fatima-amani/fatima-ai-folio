@@ -2,15 +2,20 @@
   "personal": {
     "name": "Fatima Sayeed Amani",
     "firstname": "Fatima",
-    "title": "AIML Engineer",
-    "subtitle": "AI + Automation Enthusiast",
+    "title": "Software Developer",
+    "subtitle": "AI Enthusiast",
     "location": "Bengaluru, India",
     "email": "fatima.amani65@gmail.com",
     "taglines": [
-      "Building Scalable Backends",
-      "Automating Workflows with AI",
-      "Creating Intelligent Solutions",
-      "Developing Microservices"
+      "Building Scalable Backends - because crashing in production is *so* last season",
+      "Automating Workflows with AI - so you can finally pretend to be busy",
+      "Creating Intelligent Solutions - to make up for our own poor life choices",
+      "Developing Microservices - because monoliths are soooo 2005",
+      "Building AI Agents - that don’t ask for vacation days... yet",
+      "Exploring AI models - one LLM meltdown at a time",
+      "Designing SQL databases - because ACID compliance is my only stable relationship",
+      "Containerizing with Docker - cause my app works outside my laptop too",
+      "Vibing with MongoDB - because who needs structure when you’ve got vibes"
     ],
     "social": {
       "github": "https://github.com/fatimaamani",
@@ -19,15 +24,24 @@
     },
     "resume": "https://tinyurl.com/fatima-amani"
   },
-  "funFacts": [
-    "My first program was a calculator that could only add numbers",
-    "I've written over 50,000 lines of Python code in the past year",
-    "I can solve a Rubik's cube in under 2 minutes",
-    "I've contributed to 15+ open source projects on GitHub",
-    "I built my first AI chatbot when I was 17",
-    "I once automated my entire college assignment submission process",
-    "I have a collection of 200+ programming books (mostly digital)",
-    "I can type at 120 WPM without looking at the keyboard"
+ "funFacts": [
+    "I built an AI tool that writes resumes and cover letters — basically turned an LLM into my career coach.",
+    "My first AI project wasn’t just a chatbot; it created resumes and cover letters like a pro.",
+    "I’d rather code an AI workflow to write and send an email than actually type one myself.",
+    "I automated a presales workflow from a whole week to just 5 minutes — productivity who?",
+    "My AI-powered beauty chatbot recommends your best makeup product faster than any influencer.",
+    "I got a state-funded grant to build an AI project — government-approved tech baddie.",
+    "Kafka and Redis? Just two more friends I text when my system needs scaling.",
+    "Built a makeup and beauty e-commerce platform with secure payments — because retail therapy deserves good backend logic.",
+    "I’ve organized inter-college fests and hackathons — I code and coordinate.",
+    "I can scrape job portals, build REST APIs, and deploy microservices — but still forget that one semicolon.",
+    "I once solved 17 DP problems in a single day.",
+    "Hashmaps are my favorite data structure — O(1) access, zero nonsense.",
+    "I can code a Sudoku solver, but can’t solve one myself.",
+    "I'm such a big Bollywood fan, I built a movie recommender system just to automate my weekend watchlist.",
+    "Apart from coding, I love creating makeup videos and mini vlogs capturing life.",
+    "When I can't find the right SDK, I just build a Selenium automation and call it a day.",
+    "I talk to AI agents more than actual humans — and they usually make more sense."
   ],
   "about": {
     "intro": "Aspiring AIML engineer with a strong background in programming and web development. Motivated by problem-solving and dedicated to driving impactful solutions through innovation. Looking for opportunities to contribute to high-impact projects while expanding my skillset in a forward-thinking organization.",
@@ -46,13 +60,22 @@
       "title": "Software Developer Intern",
       "company": "Webknot Technologies",
       "duration": "Jan 2025 - July 2025",
-      "achievements": [
+      "highlights": [
         "Worked on backend technologies and microservices using Spring Boot, FastAPI, and Express.",
         "Designed and implemented automation solutions to streamline Business Analyst workflows, significantly reducing pre-sales task durations from weeks to minutes.",
         "Developed cutting-edge AI-driven solutions leveraging large language models (LLMs) and AI Agents; engineered real-time interview platforms using LiveKit integrated with AI agents for dynamic, interactive experiences."
       ],
-      "highlights": [],
-      "images": []
+      "achievements": [
+        "Awarded as best intern during level up training program.",
+        "The project 'AI Powered Presales Automation' won first prize at Product Expo held at Webknot Technologies"
+      ],
+      "images": [
+        {
+          "name": "Internship Certificate",
+          "path": "/images/experience/Fatima Sayeed Amani_ Internship Certificate_page-0001.jpg",
+          "description": "Certificate of completion for Software Developer Internship at Webknot Technologies"
+        }
+      ]
     }
   ],
   "projects": [

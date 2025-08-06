@@ -23,36 +23,86 @@ interface HeroProps {
 
 const Hero = ({ data }: HeroProps) => {
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
+  const [displayTitle, setDisplayTitle] = useState('');
+  const [showDescription, setShowDescription] = useState(false);
+  const [animationPhase, setAnimationPhase] = useState<'title' | 'description' | 'pause' | 'erase'>('title');
 
   useEffect(() => {
     const currentTagline = data.personal.taglines[currentTaglineIndex];
+    const hasHyphen = currentTagline.includes(' - ');
     
-    if (isTyping) {
-      if (displayText.length < currentTagline.length) {
-        const timeout = setTimeout(() => {
-          setDisplayText(currentTagline.slice(0, displayText.length + 1));
-        }, 100);
-        return () => clearTimeout(timeout);
-      } else {
-        const timeout = setTimeout(() => {
-          setIsTyping(false);
-        }, 2000);
-        return () => clearTimeout(timeout);
+    if (hasHyphen) {
+      const [title, description] = currentTagline.split(' - ');
+      
+      switch (animationPhase) {
+        case 'title':
+          if (displayTitle.length < title.length) {
+            const timeout = setTimeout(() => {
+              setDisplayTitle(title.slice(0, displayTitle.length + 1));
+            }, 100);
+            return () => clearTimeout(timeout);
+          } else {
+            setAnimationPhase('description');
+          }
+          break;
+          
+        case 'description':
+          setTimeout(() => {
+            setShowDescription(true);
+            setAnimationPhase('pause');
+          }, 500);
+          break;
+          
+        case 'pause':
+          setTimeout(() => {
+            setAnimationPhase('erase');
+          }, 2000);
+          break;
+          
+        case 'erase':
+          if (showDescription) {
+            setShowDescription(false);
+          } else if (displayTitle.length > 0) {
+            const timeout = setTimeout(() => {
+              setDisplayTitle(displayTitle.slice(0, -1));
+            }, 50);
+            return () => clearTimeout(timeout);
+          } else {
+            setCurrentTaglineIndex((prev) => (prev + 1) % data.personal.taglines.length);
+            setAnimationPhase('title');
+          }
+          break;
       }
     } else {
-      if (displayText.length > 0) {
-        const timeout = setTimeout(() => {
-          setDisplayText(displayText.slice(0, -1));
-        }, 50);
-        return () => clearTimeout(timeout);
-      } else {
-        setCurrentTaglineIndex((prev) => (prev + 1) % data.personal.taglines.length);
-        setIsTyping(true);
+      // Original animation for simple taglines
+      if (animationPhase === 'title') {
+        if (displayTitle.length < currentTagline.length) {
+          const timeout = setTimeout(() => {
+            setDisplayTitle(currentTagline.slice(0, displayTitle.length + 1));
+          }, 100);
+          return () => clearTimeout(timeout);
+        } else {
+          setTimeout(() => {
+            setAnimationPhase('pause');
+          }, 1000);
+        }
+      } else if (animationPhase === 'pause') {
+        setTimeout(() => {
+          setAnimationPhase('erase');
+        }, 2000);
+      } else if (animationPhase === 'erase') {
+        if (displayTitle.length > 0) {
+          const timeout = setTimeout(() => {
+            setDisplayTitle(displayTitle.slice(0, -1));
+          }, 50);
+          return () => clearTimeout(timeout);
+        } else {
+          setCurrentTaglineIndex((prev) => (prev + 1) % data.personal.taglines.length);
+          setAnimationPhase('title');
+        }
       }
     }
-  }, [displayText, isTyping, currentTaglineIndex, data.personal.taglines]);
+  }, [displayTitle, showDescription, animationPhase, currentTaglineIndex, data.personal.taglines]);
 
   const scrollToNext = () => {
     const aboutSection = document.getElementById('about');
@@ -60,6 +110,10 @@ const Hero = ({ data }: HeroProps) => {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const currentTagline = data.personal.taglines[currentTaglineIndex];
+  const hasHyphen = currentTagline.includes(' - ');
+  const [title, description] = hasHyphen ? currentTagline.split(' - ') : [currentTagline, ''];
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative hero-glow pt-20 sm:pt-24 md:pt-28 lg:pt-32">
@@ -83,12 +137,24 @@ const Hero = ({ data }: HeroProps) => {
             {data.personal.title} | {data.personal.subtitle}
           </div>
 
-          {/* Typing animation */}
-          <div className="h-16 flex items-center justify-center mb-8">
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary">
-              {displayText}
+          {/* Enhanced Two-Line Typing animation */}
+          <div className="h-24 flex flex-col items-center justify-center mb-8">
+            {/* Title Line */}
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-primary mb-2">
+              <span>{displayTitle}</span>
               <span className="animate-pulse">|</span>
-            </span>
+            </div>
+            
+            {/* Description Line */}
+            {hasHyphen && (
+              <div className={`text-lg sm:text-xl lg:text-2xl text-accent font-medium transition-all duration-500 ${
+                showDescription 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-2'
+              }`}>
+                {description}
+              </div>
+            )}
           </div>
 
           {/* Location */}
