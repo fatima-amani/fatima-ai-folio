@@ -1,116 +1,121 @@
 # Fatima AI Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, Vite, and Tailwind CSS. Features a beautiful UI with dark/light mode, smooth animations, and comprehensive sections showcasing skills, experience, and projects.
+A modern, responsive portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 
-## 🚀 Features
+## 🚀 Live Demo
 
-- **Modern Design**: Clean, professional design with smooth animations
-- **Dark/Light Mode**: Toggle between themes with persistent preference
-- **Responsive**: Fully responsive design that works on all devices
-- **Fast Performance**: Built with Vite for optimal performance
-- **TypeScript**: Full type safety throughout the application
-- **Tailwind CSS**: Utility-first CSS framework for consistent styling
+Visit the live portfolio at: [https://fatima-amani.github.io/fatima-ai-folio](https://fatima-amani.github.io/fatima-ai-folio)
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, CSS Modules
-- **UI Components**: Radix UI, Shadcn/ui
-- **Routing**: React Router DOM
-- **State Management**: React Query
-- **Icons**: Lucide React
-- **Animations**: CSS Animations, Framer Motion
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Styling
+- **Shadcn/ui** - UI components
+- **React Router** - Client-side routing
+- **React Query** - Data fetching
+- **Lucide React** - Icons
 
 ## 📦 Installation
 
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/fatima-amani/fatima-ai-folio.git
 cd fatima-ai-folio
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start the development server:
-```bash
+# Start development server
 npm run dev
 ```
 
-4. Open [http://localhost:8080](http://localhost:8080) in your browser.
-
 ## 🚀 Deployment
 
-### GitHub Pages (Recommended)
+This project is configured for GitHub Pages deployment using the `gh-pages` branch.
 
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+### Automatic Deployment
 
-1. **Push to GitHub**: Simply push your changes to the `main` branch
-2. **Automatic Deployment**: The GitHub Action will automatically build and deploy your site
-3. **Access Your Site**: Your site will be available at `https://fatima-amani.github.io/fatima-ai-folio`
+```bash
+# Build and deploy to GitHub Pages
+npm run deploy
+```
+
+This command will:
+1. Build the project for production
+2. Deploy the built files to the `gh-pages` branch
+3. Make the site available at `https://fatima-amani.github.io/fatima-ai-folio`
 
 ### Manual Deployment
 
-If you prefer manual deployment:
-
 1. Build the project:
-```bash
-npm run build
-```
+   ```bash
+   npm run build
+   ```
 
 2. Deploy to GitHub Pages:
-```bash
-npm run deploy
-```
+   ```bash
+   npm run deploy
+   ```
+
+## 🔧 Configuration
+
+### GitHub Pages Setup
+
+1. Go to your repository settings
+2. Navigate to "Pages" section
+3. Set source to "Deploy from a branch"
+4. Select `gh-pages` branch
+5. Save the settings
+
+### Build Configuration
+
+The project is configured with:
+- Base path: `/fatima-ai-folio/` (for GitHub Pages)
+- HashRouter for client-side routing
+- 404.html for SPA routing support
+
+## 🐛 Troubleshooting
+
+### White Screen Issues
+- Ensure the base path is correctly set in `vite.config.ts`
+- Check that all assets are loading correctly
+- Verify the GitHub Pages branch is set to `gh-pages`
+
+### Build Errors
+- Run `npm install` to ensure all dependencies are installed
+- Clear the `dist` folder and rebuild: `rm -rf dist && npm run build`
+- Check for TypeScript errors: `npm run lint`
+
+### Routing Issues
+- The project uses HashRouter for better GitHub Pages compatibility
+- 404.html file handles SPA routing redirects
 
 ## 📁 Project Structure
 
 ```
-src/
-├── components/          # Reusable UI components
-│   ├── ui/            # Shadcn/ui components
-│   └── ...            # Custom components
-├── data/              # Portfolio data (JSON)
-├── hooks/             # Custom React hooks
-├── lib/               # Utility functions
-├── pages/             # Page components
-└── main.tsx           # Application entry point
+fatima-ai-folio/
+├── src/
+│   ├── components/     # React components
+│   ├── pages/         # Page components
+│   ├── data/          # Static data
+│   ├── hooks/         # Custom hooks
+│   ├── lib/           # Utilities
+│   └── ui/            # Shadcn/ui components
+├── public/            # Static assets
+├── dist/              # Build output
+└── package.json       # Dependencies and scripts
 ```
-
-## 🎨 Customization
-
-### Updating Portfolio Data
-
-Edit `src/data/portfolio.json` to update your personal information, skills, experience, and projects.
-
-### Styling
-
-- **Colors**: Modify CSS variables in `src/index.css`
-- **Components**: Update Shadcn/ui components in `src/components/ui/`
-- **Layout**: Modify component structure in `src/components/`
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run deploy` - Deploy to GitHub Pages
-
-## 🌐 Live Demo
-
-Visit the live portfolio: [https://fatima-amani.github.io/fatima-ai-folio](https://fatima-amani.github.io/fatima-ai-folio)
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test locally with `npm run dev`
+5. Submit a pull request
 
----
+## 📄 License
 
-Built with ❤️ by Fatima Sayeed Amani
+This project is open source and available under the [MIT License](LICENSE).
