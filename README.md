@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# Fatima AI Portfolio
 
-## Project info
+A modern, responsive portfolio website built with React, TypeScript, Vite, and Tailwind CSS. Features a beautiful UI with dark/light mode, smooth animations, and comprehensive sections showcasing skills, experience, and projects.
 
-**URL**: https://lovable.dev/projects/07353666-6f01-481b-b177-9a1aea0c8b43
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern Design**: Clean, professional design with smooth animations
+- **Dark/Light Mode**: Toggle between themes with persistent preference
+- **Responsive**: Fully responsive design that works on all devices
+- **Fast Performance**: Built with Vite for optimal performance
+- **TypeScript**: Full type safety throughout the application
+- **Tailwind CSS**: Utility-first CSS framework for consistent styling
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS, CSS Modules
+- **UI Components**: Radix UI, Shadcn/ui
+- **Routing**: React Router DOM
+- **State Management**: React Query
+- **Icons**: Lucide React
+- **Animations**: CSS Animations, Framer Motion
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/07353666-6f01-481b-b177-9a1aea0c8b43) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+```bash
+git clone https://github.com/fatima-amani/fatima-ai-folio.git
+cd fatima-ai-folio
+```
 
-**Use your preferred IDE**
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open [http://localhost:8080](http://localhost:8080) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 Deployment
 
-**Use GitHub Codespaces**
+### GitHub Pages (Recommended)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
 
-## What technologies are used for this project?
+1. **Push to GitHub**: Simply push your changes to the `main` branch
+2. **Automatic Deployment**: The GitHub Action will automatically build and deploy your site
+3. **Access Your Site**: Your site will be available at `https://fatima-amani.github.io/fatima-ai-folio`
 
-This project is built with:
+### Manual Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+If you prefer manual deployment:
 
-## How can I deploy this project?
+1. Build the project:
+```bash
+npm run build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/07353666-6f01-481b-b177-9a1aea0c8b43) and click on Share -> Publish.
+2. Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 📁 Project Structure
 
-Yes, you can!
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/            # Shadcn/ui components
+│   └── ...            # Custom components
+├── data/              # Portfolio data (JSON)
+├── hooks/             # Custom React hooks
+├── lib/               # Utility functions
+├── pages/             # Page components
+└── main.tsx           # Application entry point
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎨 Customization
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Updating Portfolio Data
+
+Edit `src/data/portfolio.json` to update your personal information, skills, experience, and projects.
+
+### Styling
+
+- **Colors**: Modify CSS variables in `src/index.css`
+- **Components**: Update Shadcn/ui components in `src/components/ui/`
+- **Layout**: Modify component structure in `src/components/`
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run deploy` - Deploy to GitHub Pages
+
+## 🌐 Live Demo
+
+Visit the live portfolio: [https://fatima-amani.github.io/fatima-ai-folio](https://fatima-amani.github.io/fatima-ai-folio)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+Built with ❤️ by Fatima Sayeed Amani
