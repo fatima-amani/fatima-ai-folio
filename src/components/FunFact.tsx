@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Lightbulb, RefreshCw } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,14 +12,14 @@ interface FunFactProps {
 const FunFact = ({ data }: FunFactProps) => {
   const [currentFact, setCurrentFact] = useState('');
 
-  const getRandomFact = () => {
+  const getRandomFact = useCallback(() => {
     const randomIndex = Math.floor(Math.random() * data.funFacts.length);
     setCurrentFact(data.funFacts[randomIndex]);
-  };
+  }, [data.funFacts]);
 
   useEffect(() => {
     getRandomFact();
-  }, [data.funFacts]);
+  }, [getRandomFact]);
 
   return (
     <section id="funfact" className="py-20 bg-gradient-hero">

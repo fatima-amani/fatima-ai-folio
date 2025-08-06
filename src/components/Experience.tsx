@@ -184,7 +184,7 @@ const Experience = ({ data }: ExperienceProps) => {
               <>
                 <div className="relative">
                   <img 
-                    src={selectedImage.path} 
+                    src={`${import.meta.env.BASE_URL}${selectedImage.path}`}
                     alt={selectedImage.name}
                     className="w-full h-auto max-h-[70vh] object-contain rounded-lg border"
                     onError={(e) => {
