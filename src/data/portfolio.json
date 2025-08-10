@@ -25,23 +25,23 @@
     "resume": "https://tinyurl.com/fatima-amani"
   },
  "funFacts": [
-    "I built an AI tool that writes resumes and cover letters — basically turned an LLM into my career coach.",
+    "I built an AI tool that writes resumes and cover letters, basically turned an LLM into my career coach.",
     "My first AI project wasn’t just a chatbot; it created resumes and cover letters like a pro.",
     "I’d rather code an AI workflow to write and send an email than actually type one myself.",
-    "I automated a presales workflow from a whole week to just 5 minutes — productivity who?",
+    "I automated a presales workflow from a whole week to just 5 minutes, productivity who?",
     "My AI-powered beauty chatbot recommends your best makeup product faster than any influencer.",
-    "I got a state-funded grant to build an AI project — government-approved tech baddie.",
+    "I got a state-funded grant to build an AI project, government-approved tech baddie.",
     "Kafka and Redis? Just two more friends I text when my system needs scaling.",
-    "Built a makeup and beauty e-commerce platform with secure payments — because retail therapy deserves good backend logic.",
-    "I’ve organized inter-college fests and hackathons — I code and coordinate.",
-    "I can scrape job portals, build REST APIs, and deploy microservices — but still forget that one semicolon.",
+    "Built a makeup and beauty e-commerce platform with secure payments, because retail therapy deserves good backend logic.",
+    "I’ve organized inter-college fests and hackathons, I code and coordinate.",
+    "I can scrape job portals, build REST APIs, and deploy microservices , but still forget that one semicolon.",
     "I once solved 17 DP problems in a single day.",
-    "Hashmaps are my favorite data structure — O(1) access, zero nonsense.",
+    "Hashmaps are my favorite data structure, O(1) access, zero nonsense.",
     "I can code a Sudoku solver, but can’t solve one myself.",
     "I'm such a big Bollywood fan, I built a movie recommender system just to automate my weekend watchlist.",
     "Apart from coding, I love creating makeup videos and mini vlogs capturing life.",
     "When I can't find the right SDK, I just build a Selenium automation and call it a day.",
-    "I talk to AI agents more than actual humans — and they usually make more sense."
+    "I talk to AI agents more than actual humans, and they usually make more sense."
   ],
   "about": {
     "intro": "Aspiring AIML engineer with a strong background in programming and web development. Motivated by problem-solving and dedicated to driving impactful solutions through innovation. Looking for opportunities to contribute to high-impact projects while expanding my skillset in a forward-thinking organization.",
@@ -49,7 +49,7 @@
   },
   "skills": {
     "languages": ["Java", "Python", "JavaScript", "GoLang", "C"],
-    "frontend_technologies": ["HTML", "CSS", "React", "Next JS"],
+    "frontend_technologies": ["HTML", "CSS", "React JS", "Next JS"],
     "backend_technologies": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Gin"],
     "databases": ["PostgreSQL", "MongoDB", "MySQL"],
     "ai_tools": ["LangChain", "LangGraph", "Livekit & Livekit Agents", "RAG models"],
@@ -66,7 +66,7 @@
         "Developed cutting-edge AI-driven solutions leveraging large language models (LLMs) and AI Agents; engineered real-time interview platforms using LiveKit integrated with AI agents for dynamic, interactive experiences."
       ],
       "achievements": [
-        "Awarded as best intern during level up training program.",
+        "Awarded as 'Best Squire' during level up training program.",
         "The project 'AI Powered Presales Automation' won first prize at Product Expo held at Webknot Technologies"
       ],
       "images": [
@@ -74,16 +74,35 @@
           "name": "Internship Certificate",
           "path": "images/experience/Fatima Sayeed Amani_ Internship Certificate_page-0001.jpg",
           "description": "Certificate of completion for Software Developer Internship at Webknot Technologies"
+        },
+        {
+          "name": "Certificate of Top Squire",
+          "path": "images/experience/top-squire.jpg",
+          "description": "I was awarded as top squire for my peformance during training."
+        },
+        {
+          "name": "Product Expo Winners Certificate",
+          "path": "images/experience/product-expo-winner.jpg",
+          "description": "The project 'AI Powered Presales Automation' won first prize at Product Expo held at Webknot Technologies"
+        },
+        {
+          "name": "Level up Certificate",
+          "path": "images/experience/level-up-grad.jpg",
+          "description": "Certificate of graduating from level-up training program"
         }
+
       ]
     }
   ],
   "projects": [
     {
-      "title": "Job Discovery Platform with Resume and Cover Letter Generation",
+      "title": "JobScraper: Job Discovery Platform with Resume and Cover Letter Generation",
       "tech_stack": ["Python", "Flask", "Selenium", "BeautifulSoup", "Gen AI"],
       "description": "A website to scrape job listings from multiple platforms and generate automated resumes and cover letters using AI. The backend is built with Flask and includes secure authentication and a database for user data storage.",
-      "github": null,
+      "github": {
+        "frontend": "https://github.com/apeksha-ankola/JobScraper-Frontend",
+        "backend": "https://github.com/apeksha-ankola/Job-scraper-backend"
+      },
       "demo": null,
       "highlights": [
         "Built a website to scrape job listings from multiple websites like Intenshala, Naukri and Indeed",
@@ -96,7 +115,11 @@
       "title": "AI-Powered Presales Automation",
       "tech_stack": ["FastAPI", "Express.js", "MongoDB", "LangChain", "Selenium"],
       "description": "A system of microservices built with Express.js and FastAPI to automate presales tasks. It leverages LLMs for requirement analysis and integrates with Galileo AI and Selenium for UI/UX wireframe generation.",
-      "github": null,
+      "github": {
+        "backend":"https://github.com/fatima-amani/ai-powered-presales-automation-backend",
+        "ai": "https://github.com/fatima-amani/ai-powered-presales-automation-ai",
+        "frontend":"https://github.com/Virupakshi047/ai-presale-frontend"
+      },
       "demo": null,
       "highlights": [
         "Built microservices using Express.js and FastAPI to automate presales tasks like requirement analysis and effort estimation",
@@ -108,7 +131,12 @@
       "title": "Metro Management Microservices",
       "tech_stack": ["Java", "Spring Boot", "Kafka", "Redis", "Java Mailer"],
       "description": "A distributed microservices backend for a metro management system, including user, metro, payment, and notification services. It uses Spring Boot, REST APIs, Kafka for event-driven communication, and Redis for performance optimization.",
-      "github": null,
+      "github": {
+        "metro_service":"https://github.com/fatima-amani/metro-service",
+        "user_service": "https://github.com/fatima-amani/user-service",
+        "payment_service":"https://github.com/fatima-amani/payment-service",
+        "notification_service":"https://github.com/fatima-amani/notification-service"
+      },
       "demo": null,
       "highlights": [
         "Developed a distributed microservices backend (User, Metro, Payment, Notification) using Spring Boot and REST APIs",
@@ -121,7 +149,7 @@
       "title": "BeautyBuddy: Makeup and Beauty Chatbot",
       "tech_stack": ["Python", "FastAPI", "LangChain", "LangGraph", "RAG"],
       "description": "An AI-powered chatbot with a FastAPI backend and Streamlit frontend. It uses LangGraph agents with LLMs and RAG models to classify and retrieve beauty information, and also includes a FAISS-based document retrieval system.",
-      "github": null,
+      "github": "https://github.com/fatima-amani/beauty-buddy-ai-agent",
       "demo": null,
       "highlights": [
         "Developed an AI-powered chatbot integrating FastAPI backend and Streamlit frontend",
@@ -134,7 +162,7 @@
       "title": "Serene Stays: Property Listing Website",
       "tech_stack": ["Node.js", "Express", "HTML", "CSS", "MongoDB", "Passport", "Mapbox API"],
       "description": "A comprehensive property listing website with a Node.js and Express backend. It uses MongoDB for data storage, Passport for user authentication, and the Mapbox API for interactive location services.",
-      "github": null,
+      "github": "https://github.com/fatima-amani/Serene-stays",
       "demo": null,
       "highlights": [
         "Developed a comprehensive property listing website for showcasing real estate listings",
