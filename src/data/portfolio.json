@@ -258,19 +258,19 @@
       "name": "Supervised Machine Learning: Regression and Classification",
       "provider": "Stanford Online",
       "skills": ["Machine Learning", "Regression", "Classification"],
-      "image": null
+      "image": "public/images/certification/Supervised-Machine-Learning.jpg"
     },
     {
       "name": "Introduction to Generative AI",
       "provider": "Google Cloud",
-      "skills": ["Generative AI", "AI Concepts"],
-      "image": null
+      "skills": ["Generative AI"],
+      "image": "public/images/certification/Introduction-to-Gen-Ai.jpg"
     },
     {
       "name": "Basic Linux with Administration",
       "provider": "IIT Kanpur",
-      "skills": ["Linux", "System Administration"],
-      "image": null
+      "skills": ["Linux", "Linux Commands"],
+      "image": "public/images/certification/Basic-Linux-with-Administration-by-IIT-Kanpur_page.jpg"
     },
     {
       "name": "Data Structures and Algorithms Using Java",
