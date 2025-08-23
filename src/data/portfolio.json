@@ -18,8 +18,8 @@
       "Vibing with MongoDB - because who needs structure when you’ve got vibes"
     ],
     "social": {
-      "github": "https://github.com/fatimaamani",
-      "linkedin": "https://linkedin.com/in/fatima-amani",
+      "github": "https://github.com/fatima-amani",
+      "linkedin": "https://linkedin.com/in/fatimaamani",
       "email": "fatima.amani65@gmail.com"
     },
     "resume": "https://tinyurl.com/fatima-amani"
@@ -51,13 +51,13 @@
       "programming_languages": ["Java", "Python", "JavaScript", "GoLang", "C"],
       "frontend_technologies": ["HTML", "CSS", "React.js", "Next.js"],
       "frontend_libraries": ["Tailwind CSS", "Bootstrap", "Material UI"],
-      "backend_frameworks": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Gin"],
-      "backend_architectures": ["Microservices", "REST APIs", "GraphQL", "WebSocket"],
-      "databases": ["PostgreSQL", "MongoDB", "MySQL"],
-      "ai_frameworks_and_tools": ["RAG", "FAISS", "LangChain", "LangGraph", "Livekit & Livekit Agents"],
-      "devops_and_cloud_tools": ["Git", "GitHub", "Docker", "AWS", "GCP", "Linux"],
-      "testing_and_api_tools": ["Selenium", "Postman"],
-      "ide_editors": ["VS Code", "Cursor", "IntelliJ", "PyCharm", "Eclipse"]
+      "backend_frameworks": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Nest.js", "Gin"],
+      "backend_architectures": ["Microservices", "REST APIs", "GraphQL", "WebSocket", "WebRTC", "Event-Driven Architecture", "gRPC"],
+      "databases": ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+      "ai_frameworks_and_tools": ["LLM", "AI Agents", "RAG", "FAISS", "LangChain", "LangGraph", "Livekit & Livekit Agents"],
+      "devops_and_cloud_tools": ["Git", "GitHub", "Docker", "Linux"],
+      "cloud": ["AWS", "GCP"],
+      "ide_editors": ["Selenium", "Postman","VS Code", "Cursor", "IntelliJ", "PyCharm", "Eclipse"]
   },
   "experience": [
     {
@@ -326,7 +326,7 @@
   ],
   "achievements": [
     {
-      "title": "KSCT Innovation Grant Recipient",
+      "title": "KSCST Innovation Grant Recipient",
       "description": "The project 'Job Discovery Platform with Resume and Cover Letter Generation Using Generative AI' has been selected and funded by the Karnataka State Council for Science and Technology (KSCST) under the 48th series of the Student Project Programme (SPP) 2024-25.",
       "year": "2024-25"
     }

@@ -1,7 +1,21 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Code, Server, Database, Brain, Cloud, Palette, TestTube, Monitor } from 'lucide-react';
+import { Code, Server, Database, Brain, Cloud, Palette, Monitor } from 'lucide-react';
+
+interface SkillCategory {
+  title: string;
+  icon: React.ComponentType<any>;
+  isGrouped: boolean;
+  group1?: string[];
+  group2?: string[];
+  group1Label?: string;
+  group2Label?: string;
+  skills?: string[];
+  color: string;
+  bgColor: string;
+  borderColor: string;
+}
 
 interface SkillsProps {
   data: {
@@ -16,6 +30,7 @@ interface SkillsProps {
       devops_and_cloud_tools: string[];
       testing_and_api_tools: string[];
       ide_editors: string[];
+      cloud: string[];
     };
   };
 }
@@ -23,13 +38,19 @@ interface SkillsProps {
 const Skills = ({ data }: SkillsProps) => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
-  const skillCategories = [
+  // Add null checks and default values with proper typing
+  const skills = (data?.skills || {}) as SkillsProps['data']['skills'];
+  
+  // Debug logging
+  console.log('Skills data received:', skills);
+
+  const skillCategories: SkillCategory[] = [
     {
       title: "Programming Languages",
       icon: Code,
       isGrouped: true,
-      group1: data.skills.programming_languages.slice(0, 3),
-      group2: data.skills.programming_languages.slice(3),
+      group1: skills.programming_languages?.slice(0, 3) || [],
+      group2: skills.programming_languages?.slice(3) || [],
       group1Label: "Core Languages",
       group2Label: "Additional Languages",
       color: "text-tech-blue",
@@ -37,11 +58,11 @@ const Skills = ({ data }: SkillsProps) => {
       borderColor: "border-tech-blue/20"
     },
     {
-      title: "Frontend Development",
+      title: "Frontend",
       icon: Palette,
       isGrouped: true,
-      group1: data.skills.frontend_technologies,
-      group2: data.skills.frontend_libraries,
+      group1: skills.frontend_technologies || [],
+      group2: skills.frontend_libraries || [],
       group1Label: "Technologies",
       group2Label: "Libraries",
       color: "text-tech-cyan",
@@ -49,11 +70,11 @@ const Skills = ({ data }: SkillsProps) => {
       borderColor: "border-tech-cyan/20"
     },
     {
-      title: "Backend Development",
+      title: "Backend",
       icon: Server,
       isGrouped: true,
-      group1: data.skills.backend_frameworks,
-      group2: data.skills.backend_architectures,
+      group1: skills.backend_frameworks || [],
+      group2: skills.backend_architectures || [],
       group1Label: "Frameworks",
       group2Label: "Architectures",
       color: "text-tech-green",
@@ -64,8 +85,8 @@ const Skills = ({ data }: SkillsProps) => {
       title: "Databases",
       icon: Database,
       isGrouped: true,
-      group1: data.skills.databases.slice(0, 2),
-      group2: data.skills.databases.slice(2),
+      group1: skills.databases?.slice(0, 2) || [],
+      group2: skills.databases?.slice(2) || [],
       group1Label: "Primary DBs",
       group2Label: "Additional DBs",
       color: "text-tech-purple",
@@ -76,8 +97,8 @@ const Skills = ({ data }: SkillsProps) => {
       title: "AI & ML Tools",
       icon: Brain,
       isGrouped: true,
-      group1: data.skills.ai_frameworks_and_tools.slice(0, 3),
-      group2: data.skills.ai_frameworks_and_tools.slice(3),
+      group1: skills.ai_frameworks_and_tools?.slice(0, 4) || [],
+      group2: skills.ai_frameworks_and_tools?.slice(4) || [],
       group1Label: "Core Tools",
       group2Label: "Advanced Tools",
       color: "text-primary",
@@ -85,25 +106,22 @@ const Skills = ({ data }: SkillsProps) => {
       borderColor: "border-primary/20"
     },
     {
-      title: "DevOps & Cloud",
+      title: "DevOps & Tools",
       icon: Cloud,
       isGrouped: true,
-      group1: data.skills.devops_and_cloud_tools.slice(0, 3),
-      group2: data.skills.devops_and_cloud_tools.slice(3),
+      group1: skills.devops_and_cloud_tools?.slice(0, 4) || [],
+      group2: skills.devops_and_cloud_tools?.slice(4) || [],
       group1Label: "Core Tools",
-      group2Label: "Cloud Platforms",
+      group2Label: "Additional Tools",
       color: "text-accent",
       bgColor: "bg-accent/10",
       borderColor: "border-accent/20"
     },
     {
-      title: "Testing & API Tools",
-      icon: TestTube,
-      isGrouped: true,
-      group1: data.skills.testing_and_api_tools.slice(0, 1),
-      group2: data.skills.testing_and_api_tools.slice(1),
-      group1Label: "Testing",
-      group2Label: "API Tools",
+      title: "Cloud Platforms",
+      icon: Cloud,
+      isGrouped: false,
+      skills: skills.cloud || [],
       color: "text-orange-500",
       bgColor: "bg-orange-500/10",
       borderColor: "border-orange-500/20"
@@ -112,15 +130,42 @@ const Skills = ({ data }: SkillsProps) => {
       title: "Development Tools",
       icon: Monitor,
       isGrouped: true,
-      group1: data.skills.ide_editors.slice(0, 3),
-      group2: data.skills.ide_editors.slice(3),
-      group1Label: "Primary IDEs",
-      group2Label: "Additional IDEs",
+      group1: skills.ide_editors?.slice(0, 4) || [],
+      group2: skills.ide_editors?.slice(4) || [],
+      group1Label: "Primary Tools",
+      group2Label: "Additional Tools",
       color: "text-gray-600",
       bgColor: "bg-gray-600/10",
       borderColor: "border-gray-600/20"
     }
   ];
+
+  // Filter out categories with no skills
+  const validCategories = skillCategories.filter(category => {
+    if (category.isGrouped) {
+      return (category.group1 && category.group1.length > 0) || (category.group2 && category.group2.length > 0);
+    } else {
+      return category.skills && category.skills.length > 0;
+    }
+  });
+
+  // If no valid categories, show a message
+  if (validCategories.length === 0) {
+    return (
+      <section id="skills" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
+              Technical Skills
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Skills data is currently unavailable.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="skills" className="py-20">
@@ -135,7 +180,7 @@ const Skills = ({ data }: SkillsProps) => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => {
+          {validCategories.map((category, index) => {
             const Icon = category.icon;
             return (
               <Card
@@ -163,7 +208,7 @@ const Skills = ({ data }: SkillsProps) => {
                       {/* Group 1 Section */}
                       <div>
                         <div className="flex flex-wrap gap-2 justify-center">
-                          {category.group1.map((skill, skillIndex) => (
+                          {(category.group1 || []).map((skill, skillIndex) => (
                             <Badge
                               key={skill}
                               variant="secondary"
@@ -182,7 +227,7 @@ const Skills = ({ data }: SkillsProps) => {
                       {/* Group 2 Section */}
                       <div>
                         <div className="flex flex-wrap gap-2 justify-center">
-                          {category.group2.map((skill, skillIndex) => (
+                          {(category.group2 || []).map((skill, skillIndex) => (
                             <Badge
                               key={skill}
                               variant="secondary"
@@ -196,8 +241,8 @@ const Skills = ({ data }: SkillsProps) => {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-wrap gap-2">
-                      {category.skills.map((skill, skillIndex) => (
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {(category.skills || []).map((skill, skillIndex) => (
                         <Badge
                           key={skill}
                           variant="secondary"
@@ -213,17 +258,6 @@ const Skills = ({ data }: SkillsProps) => {
               </Card>
             );
           })}
-        </div>
-
-        {/* Skills summary */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-hero rounded-2xl p-8 card-elevated">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">Always Learning</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Technology evolves rapidly, and I'm committed to staying current with the latest tools and best practices. 
-              Currently exploring advanced AI frameworks, cloud-native architectures, and emerging backend technologies.
-            </p>
-          </div>
         </div>
       </div>
     </section>

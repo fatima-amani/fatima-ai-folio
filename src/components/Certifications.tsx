@@ -101,7 +101,7 @@ const Certifications = ({ data }: CertificationsProps) => {
 
         {/* See More/Less Button */}
         {data.certifications.length > 4 && (
-          <div className="text-center mt-12">
+          <div className="flex justify-center mt-12">
             <Button
               variant="outline"
               onClick={() => setShowAll(!showAll)}

@@ -182,7 +182,7 @@ const Hero = ({ data }: HeroProps) => {
               onClick={() => window.open(data.personal.resume, '_blank')}
             >
               <Download className="mr-2 h-5 w-5" />
-              Download Resume
+              View Resume
             </Button>
           </div>
 
@@ -205,8 +205,12 @@ const Hero = ({ data }: HeroProps) => {
               <Linkedin className="h-7 w-7" />
             </a>
             <a
-              href={`mailto:${data.personal.social.email}`}
-              className="text-muted-foreground hover:text-primary transition-colors p-2 hover:scale-110 transform"
+              onClick={() => {
+                // Gmail compose URL with pre-filled email
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.social.email)}&su=${encodeURIComponent('Project Discussion')}&body=${encodeURIComponent('Hi Fatima,\n\nI\'d like to discuss a project with you.\n\nBest regards,')}`;
+                window.open(gmailUrl, '_blank');
+              }}
+              className="text-muted-foreground hover:text-primary transition-colors p-2 hover:scale-110 transform cursor-pointer"
             >
               <Mail className="h-7 w-7" />
             </a>

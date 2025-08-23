@@ -1,10 +1,6 @@
-import { useState } from 'react';
-import { Mail, Github, Linkedin, Send, MapPin, Download } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Download } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
 
 interface ContactProps {
   data: {
@@ -23,54 +19,6 @@ interface ContactProps {
 }
 
 const Contact = ({ data }: ContactProps) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Create mailto link as fallback
-      const mailtoLink = `mailto:${data.personal.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-        `Hi ${data.personal.name},\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
-      )}`;
-      
-      window.location.href = mailtoLink;
-      
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="contact" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,166 +31,65 @@ const Contact = ({ data }: ContactProps) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="card-elevated">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-primary flex items-center">
-                <Mail className="h-6 w-6 mr-3" />
-                Send a Message
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Your Name
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Doe"
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Your Email
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@example.com"
-                      className="w-full"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="Project Discussion"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell me about your project..."
-                    className="w-full min-h-[120px]"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
-                >
-                  {isSubmitting ? (
-                    'Sending...'
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4 mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
+        <div className="max-w-2xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
-            {/* Direct Contact */}
+            {/* Combined Contact & Social */}
             <Card className="card-elevated">
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-primary">Get In Touch</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-muted-foreground">{data.personal.location}</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-muted-foreground" />
-                  <a 
-                    href={`mailto:${data.personal.email}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                {/* 2-Column Grid for Contact Methods */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {/* LinkedIn */}
+                  <a
+                    href={data.personal.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 p-4 rounded-lg hover:bg-primary/5 transition-all duration-200 group border border-border/20 hover:border-primary/20 hover:scale-105"
                   >
-                    {data.personal.email}
+                    <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                    <span className="text-muted-foreground group-hover:text-primary text-sm">
+                      Connect on LinkedIn
+                    </span>
                   </a>
+                  
+                  {/* GitHub */}
+                  <a
+                    href={data.personal.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 p-4 rounded-lg hover:bg-primary/5 transition-all duration-200 group border border-border/20 hover:border-primary/20 hover:scale-105"
+                  >
+                    <Github className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                    <span className="text-muted-foreground group-hover:text-primary text-sm">
+                      View my projects on GitHub
+                    </span>
+                  </a>
+                  
+                  {/* Email - Compact */}
+                  <div className="flex items-center space-x-3 p-4 rounded-lg hover:bg-primary/5 transition-all duration-200 group border border-border/20 hover:border-primary/20 hover:scale-105 cursor-pointer"
+                       onClick={() => {
+                         // Gmail compose URL with pre-filled email
+                         const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}&su=${encodeURIComponent('Project Discussion')}&body=${encodeURIComponent('Hi Fatima,\n\nI\'d like to discuss a project with you.\n\nBest regards,')}`;
+                         window.open(gmailUrl, '_blank');
+                       }}>
+                    <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                    <span className="text-muted-foreground group-hover:text-primary text-sm">
+                      {data.personal.email}
+                    </span>
+                  </div>
+                  
+                  {/* Resume Download - Compact */}
+                  <div className="flex items-center space-x-3 p-4 rounded-lg hover:bg-primary/5 transition-all duration-200 group border border-border/20 hover:border-primary/20 hover:scale-105 cursor-pointer"
+                       onClick={() => window.open(data.personal.resume, '_blank')}>
+                    <Download className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
+                    <span className="text-muted-foreground group-hover:text-primary text-sm">
+                      View Resume
+                    </span>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Social Links */}
-            <Card className="card-elevated">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-primary">Connect With Me</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <a
-                  href={data.personal.social.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-primary/5 transition-colors group"
-                >
-                  <Github className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
-                  <span className="text-muted-foreground group-hover:text-primary">
-                    View my projects on GitHub
-                  </span>
-                </a>
-                <a
-                  href={data.personal.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-primary/5 transition-colors group"
-                >
-                  <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary" />
-                  <span className="text-muted-foreground group-hover:text-primary">
-                    Connect on LinkedIn
-                  </span>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Resume Download */}
-            <Card className="card-elevated bg-gradient-hero">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Download Resume</h3>
-                <p className="text-muted-foreground mb-4">
-                  Get a detailed overview of my experience and skills
-                </p>
-                <Button
-                  variant="outline"
-                  className="border-primary/50 hover:bg-primary/10"
-                  onClick={() => window.open(data.personal.resume, '_blank')}
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download PDF
-                </Button>
               </CardContent>
             </Card>
           </div>
@@ -260,10 +107,27 @@ const Contact = ({ data }: ContactProps) => {
               <Button
                 size="lg"
                 className="bg-gradient-primary hover:opacity-90"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  // Gmail compose URL with pre-filled email
+                  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(data.personal.email)}&su=${encodeURIComponent('Project Discussion')}&body=${encodeURIComponent('Hi Fatima,\n\nI\'d like to discuss a project with you.\n\nBest regards,')}`;
+                  window.open(gmailUrl, '_blank');
+                }}
               >
                 <Mail className="h-5 w-5 mr-2" />
-                Start a Conversation
+                Start a conversation
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary/50 hover:bg-primary/10 text-primary"
+                onClick={() => {
+                  // LinkedIn DM URL - this will open the messaging compose window
+                  const linkedinDMUrl = `${data.personal.social.linkedin}/messaging/compose/`;
+                  window.open(linkedinDMUrl, '_blank');
+                }}
+              >
+                <Linkedin className="h-5 w-5 mr-2" />
+                Message on LinkedIn
               </Button>
             </div>
           </div>

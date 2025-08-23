@@ -169,16 +169,8 @@ const Experience = ({ data }: ExperienceProps) => {
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="flex items-center justify-between">
-              <span>{selectedImage?.name}</span>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={closeImageModal}
-                className="h-8 w-8 p-0"
-              >
-                <X className="h-4 w-4" />
-              </Button>
+            <DialogTitle>
+              {selectedImage?.name}
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
