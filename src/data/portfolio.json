@@ -258,31 +258,61 @@
       "name": "Supervised Machine Learning: Regression and Classification",
       "provider": "Stanford Online",
       "skills": ["Machine Learning", "Regression", "Classification"],
-      "image": "public/images/certification/Supervised-Machine-Learning.jpg"
+      "image": "/images/certification/Supervised-Machine-Learning.jpg"
     },
     {
       "name": "Introduction to Generative AI",
       "provider": "Google Cloud",
       "skills": ["Generative AI"],
-      "image": "public/images/certification/Introduction-to-Gen-Ai.jpg"
-    },
-    {
-      "name": "Basic Linux with Administration",
-      "provider": "IIT Kanpur",
-      "skills": ["Linux", "Linux Commands"],
-      "image": "public/images/certification/Basic-Linux-with-Administration-by-IIT-Kanpur_page.jpg"
+      "image": "/images/certification/Introduction-to-Gen-Ai.jpg"
     },
     {
       "name": "Data Structures and Algorithms Using Java",
       "provider": "Infosys Springboard",
       "skills": ["Data Structures", "Algorithms", "Java"],
-      "image": null
+      "image": "/images/certification/Data-Structures-and-Algorithms-Using-Java.jpg"
+    },
+    {
+      "name": "Basic Linux with Administration",
+      "provider": "IIT Kanpur",
+      "skills": ["Linux", "Linux Commands"],
+      "image": "/images/certification/Basic-Linux-with-Administration-by-IIT-Kanpur_page.jpg"
     },
     {
       "name": "Python Fundamentals",
       "provider": "Infosys Springboard",
       "skills": ["Python", "Programming Fundamentals"],
-      "image": null
+      "image": "/images/certification/Python-Fundamentals.jpg"
+    },
+    {
+      "name": "Python Programming",
+      "provider": "IIT Kanpur",
+      "skills": ["Python", "Programming Fundamentals"],
+      "image": "/images/certification/Python-Programming.jpg"
+    },
+    {
+      "name": "Alpha: DSA with Java",
+      "provider": "Apna College",
+      "skills": ["Data Structures", "Algorithms", "Java"],
+      "image": "/images/certification/Alpha-DSA-with-Java.jpg"
+    },
+    {
+      "name":" Advanced Learning Algorithms",
+      "provider": "Stanford Online", 
+      "skills": ["Machine Learning", "Deep Learning", "Neural Networks"],
+      "image": "/images/certification/Advanced-Learning-Algorithms.jpg"
+    },
+    {
+      "name":"  AWS Cloud Technical Essentials",
+      "provider": "AWS",
+      "skills": ["AWS", "Cloud Computing", "Cloud Services"],
+      "image": "/images/certification/AWS-Cloud-Technical-Essentials.jpg"
+    },
+    {
+      "name":"NoSQL Database",
+      "provider": "Great Learning",
+      "skills": ["NoSQL", "Database", "MongoDB"],
+      "image": "/images/certification/NoSQL-Database.jpg"
     }
   ],
   "achievements": [
