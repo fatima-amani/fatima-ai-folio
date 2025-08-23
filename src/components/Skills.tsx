@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Code, Server, Database, Brain, Cloud, Palette } from 'lucide-react';
+import { Code, Server, Database, Brain, Cloud, Palette, TestTube, Monitor } from 'lucide-react';
 
 interface SkillsProps {
   data: {
     skills: {
-      languages: string[];
+      programming_languages: string[];
       frontend_technologies: string[];
-      backend_technologies: string[];
+      frontend_libraries: string[];
+      backend_frameworks: string[];
+      backend_architectures: string[];
       databases: string[];
-      ai_tools: string[];
-      devops_cloud: string[];
+      ai_frameworks_and_tools: string[];
+      devops_and_cloud_tools: string[];
+      testing_and_api_tools: string[];
+      ide_editors: string[];
     };
   };
 }
@@ -21,25 +25,37 @@ const Skills = ({ data }: SkillsProps) => {
 
   const skillCategories = [
     {
-      title: "Languages",
+      title: "Programming Languages",
       icon: Code,
-      skills: data.skills.languages,
+      isGrouped: true,
+      group1: data.skills.programming_languages.slice(0, 3),
+      group2: data.skills.programming_languages.slice(3),
+      group1Label: "Core Languages",
+      group2Label: "Additional Languages",
       color: "text-tech-blue",
       bgColor: "bg-tech-blue/10",
       borderColor: "border-tech-blue/20"
     },
     {
-      title: "Frontend",
+      title: "Frontend Development",
       icon: Palette,
-      skills: data.skills.frontend_technologies,
+      isGrouped: true,
+      group1: data.skills.frontend_technologies,
+      group2: data.skills.frontend_libraries,
+      group1Label: "Technologies",
+      group2Label: "Libraries",
       color: "text-tech-cyan",
       bgColor: "bg-tech-cyan/10",
       borderColor: "border-tech-cyan/20"
     },
     {
-      title: "Backend",
+      title: "Backend Development",
       icon: Server,
-      skills: data.skills.backend_technologies,
+      isGrouped: true,
+      group1: data.skills.backend_frameworks,
+      group2: data.skills.backend_architectures,
+      group1Label: "Frameworks",
+      group2Label: "Architectures",
       color: "text-tech-green",
       bgColor: "bg-tech-green/10",
       borderColor: "border-tech-green/20"
@@ -47,15 +63,23 @@ const Skills = ({ data }: SkillsProps) => {
     {
       title: "Databases",
       icon: Database,
-      skills: data.skills.databases,
+      isGrouped: true,
+      group1: data.skills.databases.slice(0, 2),
+      group2: data.skills.databases.slice(2),
+      group1Label: "Primary DBs",
+      group2Label: "Additional DBs",
       color: "text-tech-purple",
       bgColor: "bg-tech-purple/10",
       borderColor: "border-tech-purple/20"
     },
     {
-      title: "AI Tools",
+      title: "AI & ML Tools",
       icon: Brain,
-      skills: data.skills.ai_tools,
+      isGrouped: true,
+      group1: data.skills.ai_frameworks_and_tools.slice(0, 3),
+      group2: data.skills.ai_frameworks_and_tools.slice(3),
+      group1Label: "Core Tools",
+      group2Label: "Advanced Tools",
       color: "text-primary",
       bgColor: "bg-primary/10",
       borderColor: "border-primary/20"
@@ -63,10 +87,38 @@ const Skills = ({ data }: SkillsProps) => {
     {
       title: "DevOps & Cloud",
       icon: Cloud,
-      skills: data.skills.devops_cloud,
+      isGrouped: true,
+      group1: data.skills.devops_and_cloud_tools.slice(0, 3),
+      group2: data.skills.devops_and_cloud_tools.slice(3),
+      group1Label: "Core Tools",
+      group2Label: "Cloud Platforms",
       color: "text-accent",
       bgColor: "bg-accent/10",
       borderColor: "border-accent/20"
+    },
+    {
+      title: "Testing & API Tools",
+      icon: TestTube,
+      isGrouped: true,
+      group1: data.skills.testing_and_api_tools.slice(0, 1),
+      group2: data.skills.testing_and_api_tools.slice(1),
+      group1Label: "Testing",
+      group2Label: "API Tools",
+      color: "text-orange-500",
+      bgColor: "bg-orange-500/10",
+      borderColor: "border-orange-500/20"
+    },
+    {
+      title: "Development Tools",
+      icon: Monitor,
+      isGrouped: true,
+      group1: data.skills.ide_editors.slice(0, 3),
+      group2: data.skills.ide_editors.slice(3),
+      group1Label: "Primary IDEs",
+      group2Label: "Additional IDEs",
+      color: "text-gray-600",
+      bgColor: "bg-gray-600/10",
+      borderColor: "border-gray-600/20"
     }
   ];
 
@@ -92,7 +144,7 @@ const Skills = ({ data }: SkillsProps) => {
                   hoveredCategory === category.title 
                     ? 'scale-105 shadow-elevated' 
                     : ''
-                } animate-fade-in-up`}
+                } animate-fade-in-up h-full`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onMouseEnter={() => setHoveredCategory(category.title)}
                 onMouseLeave={() => setHoveredCategory(null)}
@@ -105,19 +157,58 @@ const Skills = ({ data }: SkillsProps) => {
                     <span className="text-lg font-semibold">{category.title}</span>
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge
-                        key={skill}
-                        variant="secondary"
-                        className={`tech-badge hover:scale-105 transition-all duration-200 animate-fade-in-up`}
-                        style={{ animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s` }}
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
+                <CardContent className="flex-1">
+                  {category.isGrouped ? (
+                    <div className="space-y-4">
+                      {/* Group 1 Section */}
+                      <div>
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {category.group1.map((skill, skillIndex) => (
+                            <Badge
+                              key={skill}
+                              variant="secondary"
+                              className={`tech-badge hover:scale-105 transition-all duration-200 animate-fade-in-up px-3 py-1`}
+                              style={{ animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s` }}
+                            >
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Divider */}
+                      <div className="border-t border-border/30 my-2"></div>
+                      
+                      {/* Group 2 Section */}
+                      <div>
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          {category.group2.map((skill, skillIndex) => (
+                            <Badge
+                              key={skill}
+                              variant="secondary"
+                              className={`tech-badge hover:scale-105 transition-all duration-200 animate-fade-in-up px-3 py-1`}
+                              style={{ animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s` }}
+                            >
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge
+                          key={skill}
+                          variant="secondary"
+                          className={`tech-badge hover:scale-105 transition-all duration-200 animate-fade-in-up px-3 py-1`}
+                          style={{ animationDelay: `${(index * 0.1) + (skillIndex * 0.05)}s` }}
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );

@@ -1,4 +1,4 @@
-import { Award, Eye, Star } from 'lucide-react';
+import { Award, Eye, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -17,6 +17,11 @@ interface CertificationsProps {
 
 const Certifications = ({ data }: CertificationsProps) => {
   const [viewingCert, setViewingCert] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedCertifications = showAll 
+    ? data.certifications 
+    : data.certifications.slice(0, 4);
 
   return (
     <section id="certifications" className="py-20 bg-background">
@@ -31,7 +36,7 @@ const Certifications = ({ data }: CertificationsProps) => {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {data.certifications.map((cert, index) => (
+          {displayedCertifications.map((cert, index) => (
             <Card 
               key={index} 
               className="card-elevated animate-fade-in-up group"
@@ -93,6 +98,29 @@ const Certifications = ({ data }: CertificationsProps) => {
             </Card>
           ))}
         </div>
+
+        {/* See More/Less Button */}
+        {data.certifications.length > 4 && (
+          <div className="text-center mt-12">
+            <Button
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              className="flex items-center gap-2 px-8 py-3 text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              {showAll ? (
+                <>
+                  <ChevronUp className="h-5 w-5" />
+                  Show Less
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="h-5 w-5" />
+                  See More ({data.certifications.length - 4} more)
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

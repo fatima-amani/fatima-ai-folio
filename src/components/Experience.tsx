@@ -11,9 +11,9 @@ interface ExperienceProps {
       title: string;
       company: string;
       duration: string;
-      achievements: string[];
-      highlights: string[];
-      images: Array<{
+      achievements?: string[];
+      highlights?: string[];
+      images?: Array<{
         name: string;
         path: string;
         description?: string;
@@ -87,43 +87,47 @@ const Experience = ({ data }: ExperienceProps) => {
               </CardHeader>
               <CardContent>
                 {/* Achievements Section */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-primary">
-                    <Star className="h-5 w-5" />
-                    Key Achievements
-                  </h4>
-                  <div className="grid gap-2">
-                    {exp.achievements.map((achievement, achievementIndex) => (
-                      <div 
-                        key={achievementIndex}
-                        className="bg-primary/5 border border-primary/20 rounded-lg p-3"
-                      >
-                        <span className="text-foreground font-medium">{achievement}</span>
-                      </div>
-                    ))}
+                {exp.achievements && exp.achievements.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-primary">
+                      <Star className="h-5 w-5" />
+                      Key Achievements
+                    </h4>
+                    <div className="grid gap-2">
+                      {exp.achievements.map((achievement, achievementIndex) => (
+                        <div 
+                          key={achievementIndex}
+                          className="bg-primary/5 border border-primary/20 rounded-lg p-3"
+                        >
+                          <span className="text-foreground font-medium">{achievement}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Highlights Section */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 text-foreground">Highlights</h4>
-                  <ul className="space-y-3">
-                    {exp.highlights.map((highlight, highlightIndex) => (
-                      <li 
-                        key={highlightIndex} 
-                        className="flex items-start space-x-3 group"
-                      >
-                        <ChevronRight className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                        <span className="text-muted-foreground leading-relaxed">
-                          {highlight}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {exp.highlights && exp.highlights.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-3 text-foreground">Highlights</h4>
+                    <ul className="space-y-3">
+                      {exp.highlights.map((highlight, highlightIndex) => (
+                        <li 
+                          key={highlightIndex} 
+                          className="flex items-start space-x-3 group"
+                        >
+                          <ChevronRight className="h-5 w-5 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                          <span className="text-muted-foreground leading-relaxed">
+                            {highlight}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* View More Button */}
-                {exp.images.length > 0 && (
+                {exp.images && exp.images.length > 0 && (
                   <div className="border-t pt-4">
                     <Button
                       variant="outline"
@@ -159,8 +163,6 @@ const Experience = ({ data }: ExperienceProps) => {
             </Card>
           ))}
         </div>
-
-
       </div>
 
       {/* Image Modal */}

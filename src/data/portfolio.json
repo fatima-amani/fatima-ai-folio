@@ -48,12 +48,16 @@
     "education": "Currently pursuing a Bachelor of Engineering in Artificial Intelligence and Machine Learning. I am passionate about the intersection of software engineering and cutting-edge AI technologies."
   },
   "skills": {
-    "languages": ["Java", "Python", "JavaScript", "GoLang", "C"],
-    "frontend_technologies": ["HTML", "CSS", "React JS", "Next JS"],
-    "backend_technologies": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Gin"],
-    "databases": ["PostgreSQL", "MongoDB", "MySQL"],
-    "ai_tools": ["LangChain", "LangGraph", "Livekit & Livekit Agents", "RAG models"],
-    "devops_cloud": ["Git", "GitHub", "Docker", "AWS", "GCP", "Selenium", "Linux"]
+      "programming_languages": ["Java", "Python", "JavaScript", "GoLang", "C"],
+      "frontend_technologies": ["HTML", "CSS", "React.js", "Next.js"],
+      "frontend_libraries": ["Tailwind CSS", "Bootstrap", "Material UI"],
+      "backend_frameworks": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Gin"],
+      "backend_architectures": ["Microservices", "REST APIs", "GraphQL", "WebSocket"],
+      "databases": ["PostgreSQL", "MongoDB", "MySQL"],
+      "ai_frameworks_and_tools": ["RAG", "FAISS", "LangChain", "LangGraph", "Livekit & Livekit Agents"],
+      "devops_and_cloud_tools": ["Git", "GitHub", "Docker", "AWS", "GCP", "Linux"],
+      "testing_and_api_tools": ["Selenium", "Postman"],
+      "ide_editors": ["VS Code", "Cursor", "IntelliJ", "PyCharm", "Eclipse"]
   },
   "experience": [
     {
@@ -92,6 +96,11 @@
         }
 
       ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "ThoughtClan Technologies",
+      "duration": "August 2025 - Present"
     }
   ],
   "projects": [

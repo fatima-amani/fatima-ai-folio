@@ -65,31 +65,6 @@ const Achievements = ({ data }: AchievementsProps) => {
             );
           })}
         </div>
-
-        {/* Achievement stats */}
-        <div className="mt-16">
-          <div className="bg-gradient-hero rounded-2xl p-8 card-elevated">
-            <h3 className="text-2xl font-semibold mb-8 text-center text-primary">By The Numbers</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold gradient-text mb-2">₹50K+</div>
-                <div className="text-muted-foreground">Grant Money Received</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text mb-2">5+</div>
-                <div className="text-muted-foreground">Hackathons Participated</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text mb-2">4⭐</div>
-                <div className="text-muted-foreground">CodeChef Rating</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text mb-2">10+</div>
-                <div className="text-muted-foreground">Open Source Contributions</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
