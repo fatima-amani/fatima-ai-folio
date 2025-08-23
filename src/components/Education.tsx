@@ -64,7 +64,7 @@ const Education = ({ data }: EducationProps) => {
                   <div className="flex flex-col items-end space-y-2">
                     {(edu.cgpa || edu.percentage) && (
                       <Badge variant="secondary" className="flex items-center gap-2 px-4 py-2">
-                        <Award className="h-4 w-4" />
+                        <Award className="h-6 w-6" />
                         {edu.cgpa || edu.percentage}
                       </Badge>
                     )}
@@ -73,41 +73,18 @@ const Education = ({ data }: EducationProps) => {
               </CardHeader>
               {edu.relevant_coursework && (
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Marks</h4>
-                      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-                        {edu.cgpa && (
-                          <div className="text-lg font-bold text-primary">
-                            CGPA: {edu.cgpa}
-                          </div>
-                        )}
-                        {edu.percentage && (
-                          <div className="text-lg font-bold text-primary">
-                            Percentage: {edu.percentage}
-                          </div>
-                        )}
-                        {edu.stream && (
-                          <div className="text-sm text-muted-foreground mt-1">
-                            Stream: {edu.stream}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-2">Relevant Coursework</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.relevant_coursework.map((course, courseIndex) => (
-                          <Badge
-                            key={courseIndex}
-                            variant="secondary"
-                            className="tech-badge text-xs"
-                          >
-                            {course}
-                          </Badge>
-                        ))}
-                      </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">Relevant Coursework</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.relevant_coursework.map((course, courseIndex) => (
+                        <Badge
+                          key={courseIndex}
+                          variant="secondary"
+                          className="tech-badge text-xs"
+                        >
+                          {course}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </CardContent>

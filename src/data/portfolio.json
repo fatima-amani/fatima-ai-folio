@@ -61,6 +61,11 @@
   },
   "experience": [
     {
+      "title": "Software Engineer",
+      "company": "ThoughtClan Technologies",
+      "duration": "August 2025 - Present"
+    },
+    {
       "title": "Software Developer Intern",
       "company": "Webknot Technologies",
       "duration": "Jan 2025 - July 2025",
@@ -96,11 +101,6 @@
         }
 
       ]
-    },
-    {
-      "title": "Software Engineer",
-      "company": "ThoughtClan Technologies",
-      "duration": "August 2025 - Present"
     }
   ],
   "projects": [
@@ -240,18 +240,18 @@
     {
       "degree": "B.E. in Artificial Intelligence and Machine Learning",
       "institution": "RNS Institute of Technology, Bengaluru",
-      "board": null,
+      "board": "Visvesvaraya Technological University",
       "cgpa": "9.29/10.0",
       "timeline": "2021-2025",
-      "relevant_coursework": []
+      "relevant_coursework": ["Database Management Systems", "Operating Systems", "Computer Networks", "Software Engineering and Project Management", "Principles of AI", "Machine Learning", "Data Science", "Data Structures"]
     },
     {
-      "degree": "Higher Secondary (12th)",
+      "degree": "Pre University (12th)",
       "institution": "Dayananda Sagar PU College, Bengaluru",
-      "board": null,
+      "board": "Department of Pre-University Education, Karnataka",
       "percentage": "99.6%",
       "timeline": "2021",
-      "stream": "Science"
+      "stream": "Physics, Chemistry, Mathematics, Electronics"
     },
     {
       "degree": "Secondary (10th)",
@@ -259,7 +259,7 @@
       "board": "ICSE",
       "percentage": "95.2%",
       "timeline": "2019",
-      "stream": null
+      "stream": "Mathematics, Physics, Chemistry, Biology, Technical Drawing Application"
     }
   ],
   "certifications": [
