@@ -1,0 +1,45 @@
+{
+  "experiences": [
+    {
+      "title": "Software Engineer",
+      "company": "ThoughtClan Technologies",
+      "duration": "August 2025 - Present"
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "Webknot Technologies",
+      "duration": "January 2025 - July 2025",
+      "highlights": [
+        "Worked on backend technologies and microservices using Spring Boot, FastAPI, and Express.",
+        "Designed and implemented automation solutions to streamline Business Analyst workflows, significantly reducing pre-sales task durations from weeks to minutes.",
+        "Developed cutting-edge AI-driven solutions leveraging large language models (LLMs) and AI Agents; engineered real-time interview platforms using LiveKit integrated with AI agents for dynamic, interactive experiences."
+      ],
+      "achievements": [
+        "Awarded as 'Best Squire' during level up training program.",
+        "The project 'AI Powered Presales Automation' won first prize at Product Expo held at Webknot Technologies"
+      ],
+      "images": [
+        {
+          "name": "Internship Certificate",
+          "path": "images/experience/Fatima Sayeed Amani_ Internship Certificate_page-0001.jpg",
+          "description": "Certificate of completion for Software Developer Internship at Webknot Technologies"
+        },
+        {
+          "name": "Certificate of Top Squire",
+          "path": "images/experience/top-squire.jpg",
+          "description": "I was awarded as top squire for my peformance during training."
+        },
+        {
+          "name": "Product Expo Winners Certificate",
+          "path": "images/experience/product-expo-winner.jpg",
+          "description": "The project 'AI Powered Presales Automation' won first prize at Product Expo held at Webknot Technologies"
+        },
+        {
+          "name": "Level up Certificate",
+          "path": "images/experience/level-up-grad.jpg",
+          "description": "Certificate of graduating from level-up training program"
+        }
+      ]
+    }
+  ]
+}

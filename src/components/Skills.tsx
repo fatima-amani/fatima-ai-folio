@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Code, Server, Database, Brain, Cloud, Palette, Monitor } from 'lucide-react';
+import { PortfolioData } from '@/lib/dataLoader';
 
 interface SkillCategory {
   title: string;
@@ -18,28 +19,14 @@ interface SkillCategory {
 }
 
 interface SkillsProps {
-  data: {
-    skills: {
-      programming_languages: string[];
-      frontend_technologies: string[];
-      frontend_libraries: string[];
-      backend_frameworks: string[];
-      backend_architectures: string[];
-      databases: string[];
-      ai_frameworks_and_tools: string[];
-      devops_and_cloud_tools: string[];
-      testing_and_api_tools: string[];
-      ide_editors: string[];
-      cloud: string[];
-    };
-  };
+  data: PortfolioData;
 }
 
 const Skills = ({ data }: SkillsProps) => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
 
   // Add null checks and default values with proper typing
-  const skills = (data?.skills || {}) as SkillsProps['data']['skills'];
+  const skills = data?.skills || {};
   
   // Debug logging
   console.log('Skills data received:', skills);

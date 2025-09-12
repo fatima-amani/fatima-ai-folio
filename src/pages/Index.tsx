@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import portfolioData from '../data/portfolio.json';
+import { loadPortfolioData } from '../lib/dataLoader';
 import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -17,6 +17,7 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
+  const portfolioData = loadPortfolioData();
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode

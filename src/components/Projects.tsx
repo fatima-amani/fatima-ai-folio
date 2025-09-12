@@ -3,18 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { PortfolioData } from '@/lib/dataLoader';
 
 interface ProjectsProps {
-  data: {
-    projects: Array<{
-      title: string;
-      tech_stack: string[];
-      description: string;
-      github?: string | Record<string, string>;
-      demo?: string;
-      highlights?: string[];
-    }>;
-  };
+  data: PortfolioData;
 }
 
 const Projects = ({ data }: ProjectsProps) => {

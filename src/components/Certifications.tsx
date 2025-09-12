@@ -3,16 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { PortfolioData } from '@/lib/dataLoader';
 
 interface CertificationsProps {
-  data: {
-    certifications: Array<{
-      name: string;
-      provider: string;
-      skills: string[];
-      image: string;
-    }>;
-  };
+  data: PortfolioData;
 }
 
 const Certifications = ({ data }: CertificationsProps) => {
@@ -80,7 +74,7 @@ const Certifications = ({ data }: CertificationsProps) => {
                   {viewingCert === index ? 'Hide Certificate' : 'View Certificate'}
                 </Button>
 
-                {viewingCert === index && (
+                {viewingCert === index && cert.image && (
                   <div className="mt-4 animate-fade-in">
                     <div className="rounded-lg overflow-hidden border bg-muted/20 p-4">
                       <img 
@@ -91,6 +85,22 @@ const Certifications = ({ data }: CertificationsProps) => {
                           e.currentTarget.src = `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&h=400&fit=crop`;
                         }}
                       />
+                    </div>
+                  </div>
+                )}
+                {viewingCert === index && !cert.image && cert.verify_cred_link && (
+                  <div className="mt-4 animate-fade-in">
+                    <div className="rounded-lg overflow-hidden border bg-muted/20 p-4 text-center">
+                      <p className="text-muted-foreground mb-4">Certificate verification available</p>
+                      <a
+                        href={cert.verify_cred_link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200"
+                      >
+                        <Award className="h-4 w-4" />
+                        Verify Certificate
+                      </a>
                     </div>
                   </div>
                 )}

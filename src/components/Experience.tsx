@@ -4,22 +4,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useState } from 'react';
+import { PortfolioData } from '@/lib/dataLoader';
 
 interface ExperienceProps {
-  data: {
-    experience: Array<{
-      title: string;
-      company: string;
-      duration: string;
-      achievements?: string[];
-      highlights?: string[];
-      images?: Array<{
-        name: string;
-        path: string;
-        description?: string;
-      }>;
-    }>;
-  };
+  data: PortfolioData;
 }
 
 const Experience = ({ data }: ExperienceProps) => {

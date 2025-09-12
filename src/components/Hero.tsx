@@ -1,24 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PortfolioData } from '@/lib/dataLoader';
 
 interface HeroProps {
-  data: {
-    personal: {
-      name: string;
-      firstname: string;
-      title: string;
-      subtitle: string;
-      location: string;
-      taglines: string[];
-      social: {
-        github: string;
-        linkedin: string;
-        email: string;
-      };
-      resume: string;
-    };
-  };
+  data: PortfolioData;
 }
 
 const Hero = ({ data }: HeroProps) => {

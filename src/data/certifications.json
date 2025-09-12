@@ -1,0 +1,126 @@
+{
+  "certifications": [
+    {
+      "name": "IBM RAG and Agentic AI",
+      "provider": "IBM",
+      "skills": ["RAG", "Agentic AI"],
+      "image": "/images/certification/IBM-RAG-and-Agentic-AI.jpg"
+    },
+    {
+      "name": "Advanced RAG with Vector Databases and Retrievers",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "ff54fec9-788d-4d4d-b8b6-afa25456caae",
+      "verify_cred_link": "https://www.credly.com/badges/ff54fec9-788d-4d4d-b8b6-afa25456caae/public_url",
+      "image": "/images/certification/Advanced-RAG-with-Vector-Databases-and-Retrievers.jpg"
+    },
+    {
+      "name": "Build RAG Applications: Get Started",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "3eb3a9ae-146e-4c5f-bb12-6cda8cbd45b0",
+      "verify_cred_link": "https://www.credly.com/badges/3eb3a9ae-146e-4c5f-bb12-6cda8cbd45b0/public_url",
+      "image": "/images/certification/Build-RAG-Applications-Get-Started.jpg"
+    },
+    {
+      "name": "Develop Generative AI Applications: Get Started",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "40f903dc-de03-43d3-9b86-53e1faaf1c87",
+      "verify_cred_link": "https://www.credly.com/badges/40f903dc-de03-43d3-9b86-53e1faaf1c87/public_url",
+      "image": "/images/certification/Develop-Generative-AI-Applications-Get-Started.jpg"
+    },
+    {
+      "name": "Fundamentals of Building AI Agents",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "48bad066-1ca0-4737-9c61-00ccdfc94775",
+      "verify_cred_link": "https://www.credly.com/badges/48bad066-1ca0-4737-9c61-00ccdfc94775/public_url",
+      "image": "/images/certification/Fundamentals-of-Building-AI-Agents.jpg"
+    },
+    {
+      "name": "Build Multimodal Generative AI Applications",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "a8f325b6-2f4b-4752-b70c-d9d60eeb3f1e",
+      "verify_cred_link": "https://www.credly.com/badges/a8f325b6-2f4b-4752-b70c-d9d60eeb3f1e/public_url",
+      "image": "/images/certification/Build-Multimodal-Generative-AI-Applications.jpg"
+    },
+    {
+      "name": "Vector Databases for RAG: An Introduction",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "34891582-b3e9-475c-81e9-4a1471e36c60",
+      "verify_cred_link": "https://www.credly.com/badges/34891582-b3e9-475c-81e9-4a1471e36c60/public_url",
+      "image": "/images/certification/Vector-Databases-for-RAG-An-Introduction.jpg"
+    },
+    {
+      "name": "Agentic AI with LangChain and LangGraph",
+      "provider": "Coursera",
+      "skills": [],
+      "credential": "9dbcf0b7-d675-4b96-8006-fe9dad11e45e",
+      "verify_cred_link": "https://www.credly.com/badges/9dbcf0b7-d675-4b96-8006-fe9dad11e45e/public_url",
+      "image": "/images/certification/Agentic-AI-with-LangChain-and-LangGraph.jpg"
+    },
+    {
+      "name": "Supervised Machine Learning: Regression and Classification",
+      "provider": "Stanford Online",
+      "skills": ["Machine Learning", "Regression", "Classification"],
+      "image": "/images/certification/Supervised-Machine-Learning.jpg"
+    },
+    {
+      "name": "Introduction to Generative AI",
+      "provider": "Google Cloud",
+      "skills": ["Generative AI"],
+      "image": "/images/certification/Introduction-to-Gen-Ai.jpg"
+    },
+    {
+      "name": "Data Structures and Algorithms Using Java",
+      "provider": "Infosys Springboard",
+      "skills": ["Data Structures", "Algorithms", "Java"],
+      "image": "/images/certification/Data-Structures-and-Algorithms-Using-Java.jpg"
+    },
+    {
+      "name": "Basic Linux with Administration",
+      "provider": "IIT Kanpur",
+      "skills": ["Linux", "Linux Commands"],
+      "image": "/images/certification/Basic-Linux-with-Administration-by-IIT-Kanpur_page.jpg"
+    },
+    {
+      "name": "Python Fundamentals",
+      "provider": "Infosys Springboard",
+      "skills": ["Python", "Programming Fundamentals"],
+      "image": "/images/certification/Python-Fundamentals.jpg"
+    },
+    {
+      "name": "Python Programming",
+      "provider": "IIT Kanpur",
+      "skills": ["Python", "Programming Fundamentals"],
+      "image": "/images/certification/Python-Programming.jpg"
+    },
+    {
+      "name": "Alpha: DSA with Java",
+      "provider": "Apna College",
+      "skills": ["Data Structures", "Algorithms", "Java"],
+      "image": "/images/certification/Alpha-DSA-with-Java.jpg"
+    },
+    {
+      "name":" Advanced Learning Algorithms",
+      "provider": "Stanford Online", 
+      "skills": ["Machine Learning", "Deep Learning", "Neural Networks"],
+      "image": "/images/certification/Advanced-Learning-Algorithms.jpg"
+    },
+    {
+      "name":"  AWS Cloud Technical Essentials",
+      "provider": "AWS",
+      "skills": ["AWS", "Cloud Computing", "Cloud Services"],
+      "image": "/images/certification/AWS-Cloud-Technical-Essentials.jpg"
+    },
+    {
+      "name":"NoSQL Database",
+      "provider": "Great Learning",
+      "skills": ["NoSQL", "Database", "MongoDB"],
+      "image": "/images/certification/NoSQL-Database.jpg"
+    }
+  ]
+}
