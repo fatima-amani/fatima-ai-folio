@@ -16,6 +16,7 @@ export interface PortfolioData {
     social: {
       github: string;
       linkedin: string;
+      credly: string;
       email: string;
     };
     resume: string;

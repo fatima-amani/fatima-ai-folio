@@ -1,7 +1,8 @@
-import { Award, Eye, Star, ChevronDown, ChevronUp } from 'lucide-react';
+import { Award, Eye, Star, ChevronDown, ChevronUp, ExternalLink, X } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { PortfolioData } from '@/lib/dataLoader';
 
@@ -10,12 +11,26 @@ interface CertificationsProps {
 }
 
 const Certifications = ({ data }: CertificationsProps) => {
-  const [viewingCert, setViewingCert] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    name: string;
+    path: string;
+  } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
   const displayedCertifications = showAll 
     ? data.certifications 
     : data.certifications.slice(0, 4);
+
+  const openImageModal = (image: { name: string; path: string }) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   return (
     <section id="certifications" className="py-20 bg-background">
@@ -29,79 +44,76 @@ const Certifications = ({ data }: CertificationsProps) => {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <div className="space-y-8">
           {displayedCertifications.map((cert, index) => (
             <Card 
               key={index} 
-              className="card-elevated animate-fade-in-up group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="card-elevated animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <CardTitle className="text-xl font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <div>
+                    <CardTitle className="text-2xl font-bold text-primary mb-2">
                       {cert.name}
                     </CardTitle>
-                    <div className="flex items-center text-lg font-semibold text-foreground mb-3">
-                      <Award className="h-5 w-5 mr-2 text-muted-foreground" />
+                    <div className="flex items-center text-lg font-semibold text-foreground mb-2">
+                      <Award className="h-4 w-4 mr-2 text-muted-foreground" />
                       {cert.provider}
                     </div>
                   </div>
+                  {cert.credential && (
+                    <Badge variant="outline" className="flex items-center gap-2 px-4 py-2 text-sm">
+                      <Star className="h-4 w-4" />
+                      ID: {cert.credential}
+                    </Badge>
+                  )}
                 </div>
               </CardHeader>
-              
               <CardContent>
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-foreground mb-2 flex items-center gap-2">
-                    <Star className="h-4 w-4 text-primary" />
-                    Skills Gained
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {cert.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                <Button
-                  variant="outline"
-                  onClick={() => setViewingCert(viewingCert === index ? null : index)}
-                  className="flex items-center gap-2 w-full"
-                >
-                  <Eye className="h-4 w-4" />
-                  {viewingCert === index ? 'Hide Certificate' : 'View Certificate'}
-                </Button>
-
-                {viewingCert === index && cert.image && (
-                  <div className="mt-4 animate-fade-in">
-                    <div className="rounded-lg overflow-hidden border bg-muted/20 p-4">
-                      <img 
-                        src={cert.image} 
-                        alt={`${cert.name} Certificate`}
-                        className="w-full h-64 object-contain rounded-lg bg-white"
-                        onError={(e) => {
-                          e.currentTarget.src = `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&h=400&fit=crop`;
-                        }}
-                      />
+                {/* Skills Section */}
+                {cert.skills && cert.skills.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold mb-3 flex items-center gap-2 text-primary">
+                      <Star className="h-5 w-5" />
+                      Skills Gained
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {cert.skills.map((skill, skillIndex) => (
+                        <Badge key={skillIndex} variant="secondary" className="text-sm">
+                          {skill}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 )}
-                {viewingCert === index && !cert.image && cert.verify_cred_link && (
-                  <div className="mt-4 animate-fade-in">
-                    <div className="rounded-lg overflow-hidden border bg-muted/20 p-4 text-center">
-                      <p className="text-muted-foreground mb-4">Certificate verification available</p>
-                      <a
-                        href={cert.verify_cred_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200"
-                      >
-                        <Award className="h-4 w-4" />
-                        Verify Certificate
-                      </a>
-                    </div>
+
+                {/* Verification Link */}
+                {cert.verify_cred_link && (
+                  <div className="mb-6">
+                    <a
+                      href={cert.verify_cred_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-md"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      Verify Credential
+                    </a>
+                  </div>
+                )}
+
+                {/* View Certificate Button */}
+                {cert.image && (
+                  <div className="border-t pt-4">
+                    <Button
+                      variant="outline"
+                      onClick={() => openImageModal({ name: cert.name, path: cert.image! })}
+                      className="flex items-center gap-2"
+                    >
+                      <Eye className="h-4 w-4" />
+                      View Certificate
+                    </Button>
                   </div>
                 )}
               </CardContent>
@@ -132,6 +144,31 @@ const Certifications = ({ data }: CertificationsProps) => {
           </div>
         )}
       </div>
+
+      {/* Certificate Modal */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>
+              {selectedImage?.name}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            {selectedImage && (
+              <div className="relative">
+                <img 
+                  src={selectedImage.path}
+                  alt={selectedImage.name}
+                  className="w-full h-auto max-h-[70vh] object-contain rounded-lg border"
+                  onError={(e) => {
+                    e.currentTarget.src = `https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=800&h=600&fit=crop`;
+                  }}
+                />
+              </div>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

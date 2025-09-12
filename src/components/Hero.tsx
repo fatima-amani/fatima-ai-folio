@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, ChevronDown, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PortfolioData } from '@/lib/dataLoader';
 
@@ -189,6 +189,14 @@ const Hero = ({ data }: HeroProps) => {
               className="text-muted-foreground hover:text-primary transition-colors p-2 hover:scale-110 transform"
             >
               <Linkedin className="h-7 w-7" />
+            </a>
+            <a
+              href={data.personal.social.credly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors p-2 hover:scale-110 transform"
+            >
+              <Award className="h-7 w-7" />
             </a>
             <a
               onClick={() => {
