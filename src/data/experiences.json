@@ -1,18 +1,55 @@
 {
   "experiences": [
     {
-      "title": "Software Engineer",
+      "title": "Software Engineer (Data Science)",
       "company": "ThoughtClan Technologies",
-      "duration": "August 2025 - Present"
+      "duration": "Aug. 2025 – Present",
+      "location": "Bengaluru, India",
+      "projects": [
+        {
+          "name": "Video Analytics (Safety Equipment Detection)",
+          "bullets": [
+            "Built and optimized YOLO (YOLO11, YOLO26) object detection pipelines for real-time safety equipment detection and truck zone-violation detection across multi-camera feeds in Coal and Aluminium plant.",
+            "Implemented a multi-object tracking system with a feedback-driven retraining pipeline to continuously improve model accuracy.",
+            "Built and managed backend APIs using FastAPI, with WebSocket-based real-time notifications for safety violation alerts.",
+            "Managed Linux-based RTSP recording infrastructure using cron and ffmpeg for continuous camera feed capture.",
+            "Automated the end-to-end detection-to-alert workflow, significantly reducing manual monitoring effort for Plant Safety Personnel."
+          ]
+        },
+        {
+          "name": "Potline AI Chatbot",
+          "bullets": [
+            "Built and maintained a production-grade AI agent using LangGraph to automate data analysis workflows through natural language.",
+            "Developed a SQL agent and dynamic chart generation pipeline with Role-Based Access Control (RBAC), converting user questions into database queries and real-time visual insights.",
+            "Reduced inference cost by 16x and improved response latency by 3x by routing tasks to smaller LLMs instead of large models.",
+            "Designed and implemented an automated scheduling pipeline for Potline Excel reports, enabling timely generation and eliminating manual reporting workflows.",
+            "Deployed and maintained the application on on-premises server using IIS."
+          ]
+        }
+      ],
+      "images": []
     },
     {
       "title": "Software Developer Intern",
       "company": "Webknot Technologies",
-      "duration": "January 2025 - July 2025",
-      "highlights": [
-        "Worked on backend technologies and microservices using Spring Boot, FastAPI, and Express.",
-        "Designed and implemented automation solutions to streamline Business Analyst workflows, significantly reducing pre-sales task durations from weeks to minutes.",
-        "Developed cutting-edge AI-driven solutions leveraging large language models (LLMs) and AI Agents; engineered real-time interview platforms using LiveKit integrated with AI agents for dynamic, interactive experiences."
+      "duration": "Jan. 2025 – July 2025",
+      "location": "Bengaluru, India",
+      "projects": [
+        {
+          "name": "Greenlight Recruitment (ReadyToWork)",
+          "bullets": [
+            "Developed and deployed AI services powering multimodal agents for real-time job/resume based interviews and custom skill assessments, delivering instant personalized candidate feedback within seconds.",
+            "Built a microservice for AI-powered resume building and enhancement, tailoring resumes to specific job requirements.",
+            "Containerized and deployed services using Docker on a Linux cloud server, streamlining scalability and enhancing deployment reliability."
+          ]
+        },
+        {
+          "name": "Mock Visa",
+          "bullets": [
+            "Led development and deployment of an AI-powered Mock Visa Interview Simulation Platform, enabling real-time conversational interviews for 100+ concurrent users with low-latency responses.",
+            "Integrated LiveKit Agents to orchestrate real-time interactive interview sessions, reducing operational costs by 95% compared to human interviewers."
+          ]
+        }
       ],
       "achievements": [
         "Awarded as 'Best Squire' during level up training program.",

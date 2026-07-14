@@ -42,6 +42,11 @@ export interface PortfolioData {
     title: string;
     company: string;
     duration: string;
+    location: string;
+    projects?: Array<{
+      name: string;
+      bullets: string[];
+    }>;
     achievements?: string[];
     highlights?: string[];
     images?: Array<{

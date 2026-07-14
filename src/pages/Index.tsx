@@ -49,9 +49,9 @@ const Index = () => {
       <main>
         <Hero data={portfolioData} />
         <FunFact data={portfolioData} />
+        <Experience data={portfolioData} />
         <About data={portfolioData} />
         <Skills data={portfolioData} />
-        <Experience data={portfolioData} />
         <Projects data={portfolioData} />
         <Education data={portfolioData} />
         <Certifications data={portfolioData} />

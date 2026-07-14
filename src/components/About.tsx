@@ -1,5 +1,6 @@
 import { Code, Brain, Zap, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Reveal from '@/components/ui/reveal';
 
 interface AboutProps {
   data: {
@@ -37,18 +38,19 @@ const About = ({ data }: AboutProps) => {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
+        <Reveal className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-2 gradient-text">
             About Me
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="section-accent-line" />
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
             Passionate about creating innovative solutions at the intersection of backend development and artificial intelligence
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
-          <div className="space-y-6">
+          <Reveal direction="left" className="space-y-6">
             <div className="prose prose-lg max-w-none">
               <p className="text-lg leading-relaxed text-foreground">
                 {data.about.intro}
@@ -59,26 +61,26 @@ const About = ({ data }: AboutProps) => {
             </div>
             
             <div className="pt-6">
-              <h3 className="text-2xl font-semibold mb-4 text-primary">What Drives Me</h3>
+              <h3 className="text-lg font-semibold mb-4 text-foreground">
+                What Drives Me
+              </h3>
               <ul className="space-y-3">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-primary rounded-full mt-3 mr-3 flex-shrink-0"></span>
-                  <span className="text-muted-foreground">Building systems that scale from thousands to millions of users</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-primary rounded-full mt-3 mr-3 flex-shrink-0"></span>
-                  <span className="text-muted-foreground">Exploring how AI can solve complex business problems</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-primary rounded-full mt-3 mr-3 flex-shrink-0"></span>
-                  <span className="text-muted-foreground">Contributing to open source and helping fellow developers grow</span>
-                </li>
+                {[
+                  'Building systems that scale from thousands to millions of users',
+                  'Exploring how AI can solve complex business problems',
+                  'Contributing to open source and helping fellow developers grow',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 group">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-          </div>
+          </Reveal>
 
           {/* Highlight cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <Reveal direction="right" className="grid sm:grid-cols-2 gap-6">
             {highlights.map((highlight, index) => {
               const Icon = highlight.icon;
               return (
@@ -87,7 +89,7 @@ const About = ({ data }: AboutProps) => {
                   className="card-elevated hover:scale-105 transition-all duration-300"
                 >
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/15 to-accent/15 rounded-xl flex items-center justify-center mx-auto mb-4 border border-primary/10">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <h4 className="font-semibold mb-2 text-foreground">{highlight.title}</h4>
@@ -98,7 +100,7 @@ const About = ({ data }: AboutProps) => {
                 </Card>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

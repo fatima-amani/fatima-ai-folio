@@ -4,7 +4,8 @@
       "name": "IBM RAG and Agentic AI",
       "provider": "IBM",
       "skills": ["RAG", "Agentic AI"],
-      "image": "/images/certification/IBM-RAG-and-Agentic-AI.jpg"
+      "image": "/images/certification/IBM-RAG-and-Agentic-AI.jpg",
+      "verify_cred_link": "https://coursera.org/verify/professional-cert/WJ1MHDF620GK"
     },
     {
       "name": "Advanced RAG with Vector Databases and Retrievers",

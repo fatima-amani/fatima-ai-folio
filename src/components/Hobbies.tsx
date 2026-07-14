@@ -1,25 +1,18 @@
-import { 
-  Code, 
-  Camera, 
-  Brain, 
-  PenTool, 
-  GitBranch, 
-  Music,
-  Sparkles
-} from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Code, Camera, Brain, PenTool, GitBranch, Music, Sparkles } from 'lucide-react';
+import { useRef, useState, useCallback } from 'react';
+import Reveal from '@/components/ui/reveal';
 
-interface HobbiesProps {
-  data: {
-    hobbies: Array<{
-      name: string;
-      description: string;
-      icon: string;
-    }>;
-  };
+interface HobbyEntry {
+  name: string;
+  description: string;
+  icon: string;
 }
 
-const iconMap = {
+interface HobbiesProps {
+  data: { hobbies: HobbyEntry[] };
+}
+
+const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   code: Code,
   camera: Camera,
   brain: Brain,
@@ -28,66 +21,101 @@ const iconMap = {
   music: Music,
 };
 
-const Hobbies = ({ data }: HobbiesProps) => {
+// Each hobby gets a hue so they feel differentiated, not uniform
+const HOBBY_HUES = ['207', '196', '225', '152', '28', '258', '0'];
+
+const HobbyCard = ({ hobby, index }: { hobby: HobbyEntry; index: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [pos, setPos] = useState({ x: -1, y: -1, active: false });
+  const Icon = ICON_MAP[hobby.icon] ?? Sparkles;
+  const hue = HOBBY_HUES[index % HOBBY_HUES.length];
+
+  const onMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top, active: true });
+  }, []);
+
   return (
-    <section id="hobbies" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
-            Hobbies & Interests
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Beyond code - exploring creativity and passion projects
-          </p>
-        </div>
+    <div
+      ref={cardRef}
+      onMouseMove={onMouseMove}
+      onMouseLeave={() => setPos({ x: -1, y: -1, active: false })}
+      className="group relative rounded-xl border border-border/60 bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-default"
+    >
+      {/* Spotlight */}
+      {pos.active && (
+        <div
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            background: `radial-gradient(400px circle at ${pos.x}px ${pos.y}px, hsl(${hue} 75% 55% / 0.09), transparent 50%)`,
+          }}
+        />
+      )}
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {data.hobbies.map((hobby, index) => {
-            const IconComponent = iconMap[hobby.icon as keyof typeof iconMap] || Sparkles;
-            
-            return (
-              <Card 
-                key={index} 
-                className="card-elevated animate-fade-in-up group hover:scale-105 transition-all duration-300 cursor-pointer bg-gradient-subtle border-0"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 relative">
-                    <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                      <Sparkles className="h-4 w-4 text-white m-1" />
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {hobby.name}
-                  </h3>
-                  
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {hobby.description}
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
+      {/* Top accent */}
+      <div
+        className="h-[2px] w-0 group-hover:w-full transition-all duration-500"
+        style={{ background: `hsl(${hue} 75% 55%)` }}
+      />
 
-        {/* Fun interaction area */}
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-hero rounded-2xl p-8 card-elevated">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">
-              "Life is about balance - code hard, play harder!"
-            </h3>
-            <p className="text-muted-foreground">
-              When I'm not building amazing backend systems, you'll find me exploring these passions.
-            </p>
+      <div className="relative z-10 p-6">
+        {/* Icon */}
+        <div className="mb-4">
+          <div
+            className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+            style={{
+              background: `hsl(${hue} 75% 55% / 0.1)`,
+              borderColor: `hsl(${hue} 70% 55% / 0.25)`,
+            }}
+          >
+            <Icon className="h-6 w-6" style={{ color: `hsl(${hue} 65% 45%)` }} />
           </div>
         </div>
+
+        <h3 className="font-bold text-foreground text-base mb-2 group-hover:text-primary transition-colors duration-200">
+          {hobby.name}
+        </h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">{hobby.description}</p>
       </div>
-    </section>
+    </div>
   );
 };
+
+const Hobbies = ({ data }: HobbiesProps) => (
+  <section id="hobbies" className="py-20 bg-muted/20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <Reveal className="text-center mb-16">
+        <h2 className="text-4xl sm:text-5xl font-bold mb-2 gradient-text">
+          Hobbies & Interests
+        </h2>
+        <div className="section-accent-line" />
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-6">
+          Beyond code — exploring creativity, curiosity, and passion projects
+        </p>
+      </Reveal>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {data.hobbies.map((hobby, index) => (
+          <Reveal key={index} delay={index * 70} direction={index % 2 === 0 ? 'left' : 'right'}>
+            <HobbyCard hobby={hobby} index={index} />
+          </Reveal>
+        ))}
+      </div>
+
+      {/* Quote strip */}
+      <Reveal delay={200} className="mt-12">
+        <div className="relative rounded-2xl border border-border/40 bg-gradient-hero overflow-hidden px-8 py-7 text-center">
+          <div className="absolute inset-0 hero-dot-grid opacity-25 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-accent rounded-l-2xl" />
+          <p className="relative text-lg font-medium text-foreground italic">
+            "When I'm not building backend systems, you'll find me exploring these passions."
+          </p>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+);
 
 export default Hobbies;

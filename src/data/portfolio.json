@@ -55,9 +55,9 @@
       "backend_frameworks": ["Express.js", "Spring Boot", "FastAPI", "Flask", "Nest.js", "Gin"],
       "backend_architectures": ["Microservices", "REST APIs", "GraphQL", "WebSocket", "WebRTC", "Event-Driven Architecture", "gRPC"],
       "databases": ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
-      "ai_frameworks_and_tools": ["LLM", "AI Agents", "RAG", "FAISS", "LangChain", "LangGraph", "Livekit & Livekit Agents"],
+      "ai_frameworks_and_tools": ["LLM", "AI Agents", "RAG", "FAISS", "LangChain", "LangGraph", "Livekit & Livekit Agents", "Video Analytics (YOLO)"],
       "devops_and_cloud_tools": ["Git", "GitHub", "Docker", "Linux"],
-      "cloud": ["AWS", "GCP"],
+      "cloud": ["AWS", "GCP", "On-Prem Deployment"],
       "ide_editors": ["Selenium", "Postman","VS Code", "Cursor", "IntelliJ", "PyCharm", "Eclipse"]
   },
   "experience": "./experiences.json",
